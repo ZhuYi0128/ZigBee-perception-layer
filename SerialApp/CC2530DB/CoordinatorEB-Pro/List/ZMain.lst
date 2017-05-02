@@ -1,0 +1,1077 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V8.10.3.10338/W32 for 8051         11/Aug/2016  16:42:56 #
+# Copyright 2004-2011 IAR Systems AB.                                         #
+#                                                                             #
+#    Core               =  plain                                              #
+#    Code model         =  banked                                             #
+#    Data model         =  large                                              #
+#    Calling convention =  xdata reentrant                                    #
+#    Constant location  =  data_rom                                           #
+#    Dptr setup         =  1,16                                               #
+#    Source file        =  C:\Users\zhuyi\Desktop\2016 电赛                   #
+#                          决赛\8.11\Projects\zstack\ZMain\TI2530DB\ZMain.c   #
+#    Command line       =  -f "C:\Users\zhuyi\Desktop\2016 电赛               #
+#                          决赛\8.11\Projects\zstack\Utilities\SerialApp\CC25 #
+#                          30DB\..\..\..\Tools\CC2530DB\f8wCoord.cfg"         #
+#                          (-DCPU32MHZ -DROOT=__near_func                     #
+#                          -DMAC_CFG_APP_PENDING_QUEUE=TRUE                   #
+#                          -DZDO_COORDINATOR -DRTR_NWK -DBLINK_LEDS) -f       #
+#                          "C:\Users\zhuyi\Desktop\2016 电赛                  #
+#                          决赛\8.11\Projects\zstack\Utilities\SerialApp\CC25 #
+#                          30DB\..\..\..\Tools\CC2530DB\f8wConfig.cfg"        #
+#                          (-DSECURE=0 -DZG_SECURE_DYNAMIC=0 -DREFLECTOR      #
+#                          -DDEFAULT_CHANLIST=0x00000800                      #
+#                          -DZDAPP_CONFIG_PAN_ID=0xFFF1                       #
+#                          -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_MA #
+#                          SK=0x007F -DBEACON_REQUEST_DELAY=100               #
+#                          -DBEACON_REQ_DELAY_MASK=0x00FF                     #
+#                          -DROUTE_EXPIRY_TIME=30 -DAPSC_ACK_WAIT_DURATION_PO #
+#                          LLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=7             #
+#                          -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3    #
+#                          -DNWK_MAX_DATA_RETRIES=2                           #
+#                          -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9         #
+#                          -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=40           #
+#                          -DNWK_MAX_BINDING_ENTRIES=4                        #
+#                          -DMAX_BINDING_CLUSTER_IDS=4 "-DDEFAULT_KEY={0x01,  #
+#                          0x03, 0x05, 0x07, 0x09, 0x0B, 0x0D, 0x0F, 0x00,    #
+#                          0x02, 0x04, 0x06, 0x08, 0x0A, 0x0C, 0x0D}"         #
+#                          -DMAC_MAX_FRAME_SIZE=116 "-DCONST=const __code"    #
+#                          -DGENERIC=__generic -DRFD_RCVC_ALWAYS_ON=FALSE     #
+#                          -DPOLL_RATE=1000 -DQUEUED_POLL_RATE=100            #
+#                          -DRESPONSE_POLL_RATE=100) -DREJOIN_POLL_RATE=440   #
+#                          "C:\Users\zhuyi\Desktop\2016 电赛                  #
+#                          决赛\8.11\Projects\zstack\ZMain\TI2530DB\ZMain.c"  #
+#                          -D ZIGBEEPRO -D HAL_UART=TRUE -D                   #
+#                          SERIAL_APP_PORT=0 -D LCD_SUPPORTED -D NV_RESTORE   #
+#                          -lC "C:\Users\zhuyi\Desktop\2016 电赛              #
+#                          决赛\8.11\Projects\zstack\Utilities\SerialApp\CC25 #
+#                          30DB\CoordinatorEB-Pro\List\" -lA                  #
+#                          "C:\Users\zhuyi\Desktop\2016 电赛                  #
+#                          决赛\8.11\Projects\zstack\Utilities\SerialApp\CC25 #
+#                          30DB\CoordinatorEB-Pro\List\" --diag_suppress      #
+#                          Pe001,Pa010 -o "C:\Users\zhuyi\Desktop\2016 电赛   #
+#                          决赛\8.11\Projects\zstack\Utilities\SerialApp\CC25 #
+#                          30DB\CoordinatorEB-Pro\Obj\" -e --no_unroll        #
+#                          --no_inline --no_tbaa --debug --core=plain         #
+#                          --dptr=16,1 --data_model=large                     #
+#                          --code_model=banked --calling_convention=xdata_ree #
+#                          ntrant --place_constants=data_rom                  #
+#                          --nr_virtual_regs 8 -I "C:\Users\zhuyi\Desktop\201 #
+#                          6 电赛  决赛\8.11\Projects\zstack\Utilities\Serial #
+#                          App\CC2530DB\" -I "C:\Users\zhuyi\Desktop\2016     #
+#                          电赛  决赛\8.11\Projects\zstack\Utilities\SerialAp #
+#                          p\CC2530DB\..\SOURCE\" -I                          #
+#                          "C:\Users\zhuyi\Desktop\2016 电赛                  #
+#                          决赛\8.11\Projects\zstack\Utilities\SerialApp\CC25 #
+#                          30DB\..\..\..\ZMAIN\TI2530DB\" -I                  #
+#                          "C:\Users\zhuyi\Desktop\2016 电赛                  #
+#                          决赛\8.11\Projects\zstack\Utilities\SerialApp\CC25 #
+#                          30DB\..\..\..\..\..\COMPONENTS\MT\" -I             #
+#                          "C:\Users\zhuyi\Desktop\2016 电赛                  #
+#                          决赛\8.11\Projects\zstack\Utilities\SerialApp\CC25 #
+#                          30DB\..\..\..\..\..\COMPONENTS\HAL\INCLUDE\" -I    #
+#                          "C:\Users\zhuyi\Desktop\2016 电赛                  #
+#                          决赛\8.11\Projects\zstack\Utilities\SerialApp\CC25 #
+#                          30DB\..\..\..\..\..\COMPONENTS\HAL\TARGET\CC2530EB #
+#                          \" -I "C:\Users\zhuyi\Desktop\2016 电赛            #
+#                          决赛\8.11\Projects\zstack\Utilities\SerialApp\CC25 #
+#                          30DB\..\..\..\..\..\COMPONENTS\OSAL\MCU\CCSOC\"    #
+#                          -I "C:\Users\zhuyi\Desktop\2016 电赛               #
+#                          决赛\8.11\Projects\zstack\Utilities\SerialApp\CC25 #
+#                          30DB\..\..\..\..\..\COMPONENTS\OSAL\INCLUDE\" -I   #
+#                          "C:\Users\zhuyi\Desktop\2016 电赛                  #
+#                          决赛\8.11\Projects\zstack\Utilities\SerialApp\CC25 #
+#                          30DB\..\..\..\..\..\COMPONENTS\STACK\AF\" -I       #
+#                          "C:\Users\zhuyi\Desktop\2016 电赛                  #
+#                          决赛\8.11\Projects\zstack\Utilities\SerialApp\CC25 #
+#                          30DB\..\..\..\..\..\COMPONENTS\STACK\NWK\" -I      #
+#                          "C:\Users\zhuyi\Desktop\2016 电赛                  #
+#                          决赛\8.11\Projects\zstack\Utilities\SerialApp\CC25 #
+#                          30DB\..\..\..\..\..\COMPONENTS\STACK\SEC\" -I      #
+#                          "C:\Users\zhuyi\Desktop\2016 电赛                  #
+#                          决赛\8.11\Projects\zstack\Utilities\SerialApp\CC25 #
+#                          30DB\..\..\..\..\..\COMPONENTS\STACK\SAPI\" -I     #
+#                          "C:\Users\zhuyi\Desktop\2016 电赛                  #
+#                          决赛\8.11\Projects\zstack\Utilities\SerialApp\CC25 #
+#                          30DB\..\..\..\..\..\COMPONENTS\STACK\SYS\" -I      #
+#                          "C:\Users\zhuyi\Desktop\2016 电赛                  #
+#                          决赛\8.11\Projects\zstack\Utilities\SerialApp\CC25 #
+#                          30DB\..\..\..\..\..\COMPONENTS\STACK\ZDO\" -I      #
+#                          "C:\Users\zhuyi\Desktop\2016 电赛                  #
+#                          决赛\8.11\Projects\zstack\Utilities\SerialApp\CC25 #
+#                          30DB\..\..\..\..\..\COMPONENTS\ZMAC\F8W\" -I       #
+#                          "C:\Users\zhuyi\Desktop\2016 电赛                  #
+#                          决赛\8.11\Projects\zstack\Utilities\SerialApp\CC25 #
+#                          30DB\..\..\..\..\..\COMPONENTS\ZMAC\" -I           #
+#                          "C:\Users\zhuyi\Desktop\2016 电赛                  #
+#                          决赛\8.11\Projects\zstack\Utilities\SerialApp\CC25 #
+#                          30DB\..\..\..\..\..\COMPONENTS\SERVICES\SADDR\"    #
+#                          -I "C:\Users\zhuyi\Desktop\2016 电赛               #
+#                          决赛\8.11\Projects\zstack\Utilities\SerialApp\CC25 #
+#                          30DB\..\..\..\..\..\COMPONENTS\SERVICES\SDATA\"    #
+#                          -I "C:\Users\zhuyi\Desktop\2016 电赛               #
+#                          决赛\8.11\Projects\zstack\Utilities\SerialApp\CC25 #
+#                          30DB\..\..\..\..\..\COMPONENTS\MAC\INCLUDE\" -I    #
+#                          "C:\Users\zhuyi\Desktop\2016 电赛                  #
+#                          决赛\8.11\Projects\zstack\Utilities\SerialApp\CC25 #
+#                          30DB\..\..\..\..\..\COMPONENTS\MAC\HIGH_LEVEL\"    #
+#                          -I "C:\Users\zhuyi\Desktop\2016 电赛               #
+#                          决赛\8.11\Projects\zstack\Utilities\SerialApp\CC25 #
+#                          30DB\..\..\..\..\..\COMPONENTS\MAC\LOW_LEVEL\srf04 #
+#                          \" -I "C:\Users\zhuyi\Desktop\2016 电赛            #
+#                          决赛\8.11\Projects\zstack\Utilities\SerialApp\CC25 #
+#                          30DB\..\..\..\..\..\COMPONENTS\MAC\LOW_LEVEL\srf04 #
+#                          \SINGLE_CHIP\" -Om --require_prototypes            #
+#    List file          =  C:\Users\zhuyi\Desktop\2016 电赛                   #
+#                          决赛\8.11\Projects\zstack\Utilities\SerialApp\CC25 #
+#                          30DB\CoordinatorEB-Pro\List\ZMain.lst              #
+#    Object file        =  C:\Users\zhuyi\Desktop\2016 电赛                   #
+#                          决赛\8.11\Projects\zstack\Utilities\SerialApp\CC25 #
+#                          30DB\CoordinatorEB-Pro\Obj\ZMain.r51               #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+C:\Users\zhuyi\Desktop\2016 电赛  决赛\8.11\Projects\zstack\ZMain\TI2530DB\ZMain.c
+      1          /**************************************************************************************************
+      2            Filename:       ZMain.c
+      3            Revised:        $Date: 2009-04-03 12:59:44 -0700 (Fri, 03 Apr 2009) $
+      4            Revision:       $Revision: 19677 $
+      5          
+      6            Description:    Startup and shutdown code for ZStack
+      7            Notes:          This version targets the Chipcon CC2530
+      8          
+      9          
+     10            Copyright 2005-2009 Texas Instruments Incorporated. All rights reserved.
+     11          
+     12            IMPORTANT: Your use of this Software is limited to those specific rights
+     13            granted under the terms of a software license agreement between the user
+     14            who downloaded the software, his/her employer (which must be your employer)
+     15            and Texas Instruments Incorporated (the "License").  You may not use this
+     16            Software unless you agree to abide by the terms of the License. The License
+     17            limits your use, and you acknowledge, that the Software may not be modified,
+     18            copied or distributed unless embedded on a Texas Instruments microcontroller
+     19            or used solely and exclusively in conjunction with a Texas Instruments radio
+     20            frequency transceiver, which is integrated into your product.  Other than for
+     21            the foregoing purpose, you may not use, reproduce, copy, prepare derivative
+     22            works of, modify, distribute, perform, display or sell this Software and/or
+     23            its documentation for any purpose.
+     24          
+     25            YOU FURTHER ACKNOWLEDGE AND AGREE THAT THE SOFTWARE AND DOCUMENTATION ARE
+     26            PROVIDED 揂S IS?WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED,
+     27            INCLUDING WITHOUT LIMITATION, ANY WARRANTY OF MERCHANTABILITY, TITLE,
+     28            NON-INFRINGEMENT AND FITNESS FOR A PARTICULAR PURPOSE. IN NO EVENT SHALL
+     29            TEXAS INSTRUMENTS OR ITS LICENSORS BE LIABLE OR OBLIGATED UNDER CONTRACT,
+     30            NEGLIGENCE, STRICT LIABILITY, CONTRIBUTION, BREACH OF WARRANTY, OR OTHER
+     31            LEGAL EQUITABLE THEORY ANY DIRECT OR INDIRECT DAMAGES OR EXPENSES
+     32            INCLUDING BUT NOT LIMITED TO ANY INCIDENTAL, SPECIAL, INDIRECT, PUNITIVE
+     33            OR CONSEQUENTIAL DAMAGES, LOST PROFITS OR LOST DATA, COST OF PROCUREMENT
+     34            OF SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
+     35            (INCLUDING BUT NOT LIMITED TO ANY DEFENSE THEREOF), OR OTHER SIMILAR COSTS.
+     36          
+     37            Should you have any questions regarding your right to use this Software,
+     38            contact Texas Instruments Incorporated at www.TI.com.
+     39          **************************************************************************************************/
+     40          
+     41          /*********************************************************************
+     42           * INCLUDES
+     43           */
+     44          
+     45          #include "ZComDef.h"
+     46          #include "OSAL.h"
+     47          #include "OSAL_Nv.h"
+     48          #include "OnBoard.h"
+
+   \                                 In  segment SFR_AN, at 0x81
+   \   unsigned char volatile __sfr SP
+   \                     `SP`:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0x8f
+   \   unsigned char volatile __sfr P0INP
+   \                     P0INP:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0x90
+   \   union <unnamed> volatile __sfr _A_P1
+   \                     _A_P1:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0x9d
+   \   unsigned char volatile __sfr SLEEPSTA
+   \                     SLEEPSTA:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0x9e
+   \   unsigned char volatile __sfr CLKCONSTA
+   \                     CLKCONSTA:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xbe
+   \   unsigned char volatile __sfr SLEEPCMD
+   \                     SLEEPCMD:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xc6
+   \   unsigned char volatile __sfr CLKCONCMD
+   \                     CLKCONCMD:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xfd
+   \   unsigned char volatile __sfr P0DIR
+   \                     P0DIR:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xfe
+   \   unsigned char volatile __sfr P1DIR
+   \                     P1DIR:
+   \   000000                DS 1
+     49          #include "ZMAC.h"
+     50          #include "SerialApp.h"
+     51          #ifndef NONWK
+     52            #include "AF.h"
+     53          #endif
+     54          
+     55          /* Hal */
+     56          //#include "hal_lcd.h"
+     57          #include "hal_led.h"
+     58          #include "hal_adc.h"
+     59          #include "hal_drivers.h"
+     60          #include "hal_assert.h"
+     61          #include "hal_flash.h"
+     62          
+     63          /*********************************************************************
+     64           * MACROS
+     65           */
+     66          
+     67          /*********************************************************************
+     68           * CONSTANTS
+     69           */
+     70          
+     71          // Maximun number of Vdd samples checked before go on
+     72          #define MAX_VDD_SAMPLES  3
+     73          #define ZMAIN_VDD_LIMIT  HAL_ADC_VDD_LIMIT_4
+     74          
+     75          /*********************************************************************
+     76           * TYPEDEFS
+     77           */
+     78          
+     79          /*********************************************************************
+     80           * GLOBAL VARIABLES
+     81           */
+     82          
+     83          /*********************************************************************
+     84           * EXTERNAL VARIABLES
+     85           */
+     86          
+     87          /*********************************************************************
+     88           * EXTERNAL FUNCTIONS
+     89           */
+     90          
+     91          extern bool HalAdcCheckVdd (uint8 limit);
+     92          
+     93          /*********************************************************************
+     94           * LOCAL VARIABLES
+     95           */
+     96          
+     97          /*********************************************************************
+     98           * LOCAL FUNCTIONS
+     99           */
+    100          
+    101          //static void zmain_dev_info( void );
+    102          static void zmain_ext_addr( void );
+    103          static void zmain_ram_init( void );
+    104          static void zmain_vdd_check( void );
+    105          
+    106          //#ifdef LCD_SUPPORTED
+    107          //static void zmain_lcd_init( void );
+    108          //#endif
+    109          
+    110          /*********************************************************************
+    111           * @fn      main
+    112           * @brief   First function called after startup.
+    113           * @return  don't care
+    114           *********************************************************************/
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    115          int main( void )
+   \                     main:
+    116          {
+   \   000000                ; Auto size: 0
+    117            osal_int_disable( INTS_ALL ); // 关闭所有中断
+   \   000000                ; Setup parameters for call to function osal_int_disable
+   \   000000   79FF         MOV     R1,#-0x1
+   \   000002   12....       LCALL   ??osal_int_disable?relay
+    118            HAL_BOARD_INIT(); // 初始化系统时钟
+   \   000005   53BEFB       ANL     0xbe,#0xfb
+   \                     ??main_0:
+   \   000008   E59D         MOV     A,0x9d
+   \   00000A   A2E6         MOV     C,0xE0 /* A   */.6
+   \   00000C   50FA         JNC     ??main_0
+   \   00000E   00           NOP
+   \   00000F   7800         MOV     R0,#0x0
+   \   000011   7900         MOV     R1,#0x0
+   \   000013   8009         SJMP    ??main_1
+   \                     ??main_2:
+   \   000015   00           NOP
+   \   000016   E8           MOV     A,R0
+   \   000017   2401         ADD     A,#0x1
+   \   000019   08           INC     R0
+   \   00001A   E9           MOV     A,R1
+   \   00001B   3400         ADDC    A,#0x0
+   \   00001D   F9           MOV     R1,A
+   \                     ??main_1:
+   \   00001E   C3           CLR     C
+   \   00001F   E8           MOV     A,R0
+   \   000020   94F8         SUBB    A,#-0x8
+   \   000022   E9           MOV     A,R1
+   \   000023   9401         SUBB    A,#0x1
+   \   000025   40EE         JC      ??main_2
+   \   000027   75C680       MOV     0xc6,#-0x80
+   \                     ??main_3:
+   \   00002A   7480         MOV     A,#-0x80
+   \   00002C   659E         XRL     A,0x9e
+   \   00002E   70FA         JNZ     ??main_3
+   \   000030   43BE04       ORL     0xbe,#0x4
+   \   000033   43FE01       ORL     0xfe,#0x1
+   \   000036   43FE02       ORL     0xfe,#0x2
+   \   000039   43FD10       ORL     0xfd,#0x10
+   \   00003C   438F01       ORL     0x8f,#0x1
+    119            zmain_vdd_check();// 检查芯片电压是否正常
+   \   00003F                ; Setup parameters for call to function zmain_vdd_check
+   \   00003F   12....       LCALL   ??zmain_vdd_check?relay
+    120            zmain_ram_init();// 初始化内存
+   \   000042                ; Setup parameters for call to function zmain_ram_init
+   \   000042   12....       LCALL   ??zmain_ram_init?relay
+    121            InitBoard( OB_COLD );// 初始化I/O LED Timer
+   \   000045                ; Setup parameters for call to function InitBoard
+   \   000045   7900         MOV     R1,#0x0
+   \   000047   12....       LCALL   ??InitBoard?relay
+    122            HalDriverInit();// 初始化芯片各硬件模块
+   \   00004A                ; Setup parameters for call to function HalDriverInit
+   \   00004A   12....       LCALL   ??HalDriverInit?relay
+    123            osal_nv_init( NULL );// 初始化Flash存储器
+   \   00004D                ; Setup parameters for call to function osal_nv_init
+   \   00004D   7A00         MOV     R2,#0x0
+   \   00004F   7B00         MOV     R3,#0x0
+   \   000051   12....       LCALL   ??osal_nv_init?relay
+    124            zgInit();// 初始化基本NV项目
+   \   000054                ; Setup parameters for call to function zgInit
+   \   000054   12....       LCALL   ??zgInit?relay
+    125            ZMacInit();// 初始化MAC层
+   \   000057                ; Setup parameters for call to function ZMacInit
+   \   000057   12....       LCALL   ??ZMacInit?relay
+    126            zmain_ext_addr(); // 确定IEEE64位地址
+   \   00005A                ; Setup parameters for call to function zmain_ext_addr
+   \   00005A   12....       LCALL   ??zmain_ext_addr?relay
+    127          #ifndef NONWK
+    128            // Since the AF isn't a task, call it's initialization routine
+    129            afInit();
+   \   00005D                ; Setup parameters for call to function afInit
+   \   00005D   12....       LCALL   ??afInit?relay
+    130          #endif
+    131            
+    132            osal_init_system(); // 初始化操作系统
+   \   000060                ; Setup parameters for call to function osal_init_system
+   \   000060   12....       LCALL   ??osal_init_system?relay
+    133            low_flag=1;
+   \   000063   90....       MOV     DPTR,#low_flag
+   \   000066   7401         MOV     A,#0x1
+   \   000068   F0           MOVX    @DPTR,A
+    134            high_flag=1;
+   \   000069   90....       MOV     DPTR,#high_flag
+   \   00006C   F0           MOVX    @DPTR,A
+    135            lux_warn_flag=1;
+   \   00006D   90....       MOV     DPTR,#lux_warn_flag
+   \   000070   F0           MOVX    @DPTR,A
+    136            pump_flag=1;
+   \   000071   90....       MOV     DPTR,#pump_flag
+   \   000074   F0           MOVX    @DPTR,A
+    137            shilow_flag=1;
+   \   000075   90....       MOV     DPTR,#shilow_flag
+   \   000078   F0           MOVX    @DPTR,A
+    138            shihigh_flag=1;
+   \   000079   90....       MOV     DPTR,#shihigh_flag
+   \   00007C   F0           MOVX    @DPTR,A
+    139            osal_int_enable( INTS_ALL ); // 使能全部中断
+   \   00007D                ; Setup parameters for call to function osal_int_enable
+   \   00007D   79FF         MOV     R1,#-0x1
+   \   00007F   12....       LCALL   ??osal_int_enable?relay
+    140            InitBoard( OB_READY ); // 最终板载初始化
+   \   000082                ; Setup parameters for call to function InitBoard
+   \   000082   7902         MOV     R1,#0x2
+   \   000084   12....       LCALL   ??InitBoard?relay
+    141            //zmain_dev_info();// 显示设备信息
+    142            /* Display the device info on the LCD */
+    143          /*#ifdef LCD_SUPPORTED
+    144            zmain_lcd_init();
+    145          #endif*/
+    146          #ifdef WDT_IN_PM1
+    147            /* If WDT is used, this is a good place to enable it. */
+    148            WatchDogEnable( WDTIMX );
+    149          #endif
+    150            osal_start_system(); // 执行操作系统 进去后不会返回
+   \   000087                ; Setup parameters for call to function osal_start_system
+   \   000087   12....       LCALL   ??osal_start_system?relay
+    151            // Shouldn't get here
+    152            return ( 0 );
+   \   00008A   7A00         MOV     R2,#0x0
+   \   00008C   7B00         MOV     R3,#0x0
+   \   00008E   02....       LJMP    ?BRET
+   \   000091                REQUIRE SLEEPCMD
+   \   000091                REQUIRE SLEEPSTA
+   \   000091                REQUIRE CLKCONCMD
+   \   000091                REQUIRE CLKCONSTA
+   \   000091                REQUIRE P1DIR
+   \   000091                REQUIRE P0DIR
+   \   000091                REQUIRE P0INP
+    153          } // main()
+    154          
+    155          /*********************************************************************
+    156           * @fn      zmain_vdd_check
+    157           * @brief   Check if the Vdd is OK to run the processor.
+    158           * @return  Return if Vdd is ok; otherwise, flash LED, then reset
+    159           *********************************************************************/
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    160          static void zmain_vdd_check( void )
+   \                     zmain_vdd_check:
+    161          {
+   \   000000   74F7         MOV     A,#-0x9
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 9
+   \   000005                ; Auto size: 0
+    162            uint8 vdd_passed_count = 0;
+   \   000005   7E00         MOV     R6,#0x0
+    163            bool toggle = 0;
+   \   000007   7F00         MOV     R7,#0x0
+   \   000009   8002         SJMP    ??zmain_vdd_check_0
+    164          
+    165            // Repeat getting the sample until number of failures or successes hits MAX
+    166            // then based on the count value, determine if the device is ready or not
+    167            while ( vdd_passed_count < MAX_VDD_SAMPLES )
+    168            {
+    169              if ( HalAdcCheckVdd (ZMAIN_VDD_LIMIT) )
+    170              {
+    171                vdd_passed_count++;    // Keep track # times Vdd passes in a row
+    172                MicroWait (10000);     // Wait 10ms to try again
+    173              }
+    174              else
+    175              {
+    176                vdd_passed_count = 0;  // Reset passed counter
+    177                MicroWait (50000);     // Wait 50ms
+    178                MicroWait (50000);     // Wait another 50ms to try again
+    179              }
+    180          
+    181              /* toggle LED1 and LED2 */
+    182              if (vdd_passed_count == 0)
+    183              {
+    184                if ((toggle = !(toggle)))
+    185                  HAL_TOGGLE_LED1();
+   \                     ??zmain_vdd_check_1:
+   \   00000B   C290         CLR     0x90.0
+   \                     ??zmain_vdd_check_0:
+   \   00000D   EE           MOV     A,R6
+   \   00000E   C3           CLR     C
+   \   00000F   9403         SUBB    A,#0x3
+   \   000011   5042         JNC     ??zmain_vdd_check_2
+   \   000013                ; Setup parameters for call to function HalAdcCheckVdd
+   \   000013   7904         MOV     R1,#0x4
+   \   000015   12....       LCALL   ??HalAdcCheckVdd?relay
+   \   000018   E9           MOV     A,R1
+   \   000019   6007         JZ      ??zmain_vdd_check_3
+   \   00001B   0E           INC     R6
+   \   00001C                ; Setup parameters for call to function Onboard_wait
+   \   00001C   7A10         MOV     R2,#0x10
+   \   00001E   7B27         MOV     R3,#0x27
+   \   000020   800D         SJMP    ??zmain_vdd_check_4
+   \                     ??zmain_vdd_check_3:
+   \   000022   7E00         MOV     R6,#0x0
+   \   000024                ; Setup parameters for call to function Onboard_wait
+   \   000024   7A50         MOV     R2,#0x50
+   \   000026   7BC3         MOV     R3,#-0x3d
+   \   000028   12....       LCALL   ??Onboard_wait?relay
+   \   00002B                ; Setup parameters for call to function Onboard_wait
+   \   00002B   7A50         MOV     R2,#0x50
+   \   00002D   7BC3         MOV     R3,#-0x3d
+   \                     ??zmain_vdd_check_4:
+   \   00002F   12....       LCALL   ??Onboard_wait?relay
+   \   000032   EE           MOV     A,R6
+   \   000033   70D8         JNZ     ??zmain_vdd_check_0
+   \   000035   EF           MOV     A,R7
+   \   000036   7004         JNZ     ??zmain_vdd_check_5
+   \   000038   7F01         MOV     R7,#0x1
+   \   00003A   8002         SJMP    ??zmain_vdd_check_6
+   \                     ??zmain_vdd_check_5:
+   \   00003C   7F00         MOV     R7,#0x0
+   \                     ??zmain_vdd_check_6:
+   \   00003E   EF           MOV     A,R7
+   \   00003F   6008         JZ      ??zmain_vdd_check_7
+   \   000041   A290         MOV     C,0x90.0
+   \   000043   40C6         JC      ??zmain_vdd_check_1
+   \   000045   D290         SETB    0x90.0
+   \   000047   80C4         SJMP    ??zmain_vdd_check_0
+    186                else
+    187                  HAL_TOGGLE_LED2();
+   \                     ??zmain_vdd_check_7:
+   \   000049   A291         MOV     C,0x90.1
+   \   00004B   5004         JNC     ??zmain_vdd_check_8
+   \   00004D   C291         CLR     0x90.1
+   \   00004F   80BC         SJMP    ??zmain_vdd_check_0
+   \                     ??zmain_vdd_check_8:
+   \   000051   D291         SETB    0x90.1
+   \   000053   80B8         SJMP    ??zmain_vdd_check_0
+    188              }
+    189            }
+    190          
+    191            /* turn off LED1 */
+    192            HAL_TURN_OFF_LED1();
+   \                     ??zmain_vdd_check_2:
+   \   000055   D290         SETB    0x90.0
+    193            HAL_TURN_OFF_LED2();
+   \   000057   D291         SETB    0x90.1
+    194          }
+   \   000059   7F01         MOV     R7,#0x1
+   \   00005B   02....       LJMP    ?BANKED_LEAVE_XDATA
+   \   00005E                REQUIRE _A_P1
+    195          
+    196          /**************************************************************************************************
+    197           * @fn          zmain_ext_addr
+    198           *
+    199           * @brief       Execute a prioritized search for a valid extended address and write the results
+    200           *              into the OSAL NV system for use by the system.
+    201           *
+    202           * input parameters
+    203           *
+    204           * None.
+    205           *
+    206           * output parameters
+    207           *
+    208           * None.
+    209           *
+    210           * @return      None.
+    211           **************************************************************************************************
+    212           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    213          static void zmain_ext_addr(void)
+   \                     zmain_ext_addr:
+    214          {
+   \   000000   74F4         MOV     A,#-0xc
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 12
+   \   000005                ; Auto size: 8
+   \   000005   74F8         MOV     A,#-0x8
+   \   000007   12....       LCALL   ?ALLOC_XSTACK8
+    215            uint8 nullAddr[Z_EXTADDR_LEN] = {0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF};
+   \   00000A   90....       MOV     DPTR,#`?<Constant {255, 255, 255, 255, 255, 255, 255,`
+   \   00000D   C082         PUSH    DPL
+   \   00000F   C083         PUSH    DPH
+   \   000011   85..82       MOV     DPL,?XSP + 0
+   \   000014   85..83       MOV     DPH,?XSP + 1
+   \   000017   AC82         MOV     R4,DPL
+   \   000019   AD83         MOV     R5,DPH
+   \   00001B   D083         POP     DPH
+   \   00001D   D082         POP     DPL
+   \   00001F   7408         MOV     A,#0x8
+   \   000021   12....       LCALL   ?MOVE_LONG8_XDATA_XDATA
+    216            uint8 writeNV = TRUE;
+    217          
+    218            // First check whether a non-erased extended address exists in the OSAL NV.
+    219            if ((SUCCESS != osal_nv_item_init(ZCD_NV_EXTADDR, Z_EXTADDR_LEN, NULL))  ||
+    220                (SUCCESS != osal_nv_read(ZCD_NV_EXTADDR, 0, Z_EXTADDR_LEN, aExtendedAddress)) ||
+    221                (osal_memcmp(aExtendedAddress, nullAddr, Z_EXTADDR_LEN)))
+   \   000024                ; Setup parameters for call to function osal_nv_item_init
+   \   000024   F5..         MOV     ?V0 + 0,A
+   \   000026   F5..         MOV     ?V0 + 1,A
+   \   000028   78..         MOV     R0,#?V0 + 0
+   \   00002A   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   00002D   7C08         MOV     R4,#0x8
+   \   00002F   7D00         MOV     R5,#0x0
+   \   000031   7A01         MOV     R2,#0x1
+   \   000033   7B00         MOV     R3,#0x0
+   \   000035   12....       LCALL   ??osal_nv_item_init?relay
+   \   000038   7402         MOV     A,#0x2
+   \   00003A   12....       LCALL   ?DEALLOC_XSTACK8
+   \   00003D   E9           MOV     A,R1
+   \   00003E   7057         JNZ     ??zmain_ext_addr_0
+   \   000040                ; Setup parameters for call to function osal_nv_read
+   \   000040   75....       MOV     ?V0 + 0,#aExtendedAddress & 0xff
+   \   000043   75....       MOV     ?V0 + 1,#(aExtendedAddress >> 8) & 0xff
+   \   000046   78..         MOV     R0,#?V0 + 0
+   \   000048   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   00004B   75..08       MOV     ?V0 + 0,#0x8
+   \   00004E   75..00       MOV     ?V0 + 1,#0x0
+   \   000051   78..         MOV     R0,#?V0 + 0
+   \   000053   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   000056   7C00         MOV     R4,#0x0
+   \   000058   7D00         MOV     R5,#0x0
+   \   00005A   7A01         MOV     R2,#0x1
+   \   00005C   7B00         MOV     R3,#0x0
+   \   00005E   12....       LCALL   ??osal_nv_read?relay
+   \   000061   7404         MOV     A,#0x4
+   \   000063   12....       LCALL   ?DEALLOC_XSTACK8
+   \   000066   E9           MOV     A,R1
+   \   000067   702E         JNZ     ??zmain_ext_addr_0
+   \   000069                ; Setup parameters for call to function osal_memcmp
+   \   000069   85..82       MOV     DPL,?XSP + 0
+   \   00006C   85..83       MOV     DPH,?XSP + 1
+   \   00006F   A982         MOV     R1,DPL
+   \   000071   AA83         MOV     R2,DPH
+   \   000073   89..         MOV     ?V0 + 0,R1
+   \   000075   8A..         MOV     ?V0 + 1,R2
+   \   000077   75..00       MOV     ?V0 + 2,#0x0
+   \   00007A   78..         MOV     R0,#?V0 + 0
+   \   00007C   12....       LCALL   ?PUSH_XSTACK_I_THREE
+   \   00007F   7C08         MOV     R4,#0x8
+   \   000081   7D00         MOV     R5,#0x0
+   \   000083   79..         MOV     R1,#aExtendedAddress & 0xff
+   \   000085   7A..         MOV     R2,#(aExtendedAddress >> 8) & 0xff
+   \   000087   7B00         MOV     R3,#0x0
+   \   000089   12....       LCALL   ??osal_memcmp?relay
+   \   00008C   7403         MOV     A,#0x3
+   \   00008E   12....       LCALL   ?DEALLOC_XSTACK8
+   \   000091   E9           MOV     A,R1
+   \   000092   7003         JNZ     $+5
+   \   000094   02....       LJMP    ??zmain_ext_addr_1 & 0xFFFF
+    222            {
+    223              // Attempt to read the extended address from the location on the lock bits page
+    224              // where the programming tools know to reserve it.
+    225              HalFlashRead(HAL_FLASH_IEEE_PAGE, HAL_FLASH_IEEE_OSET, aExtendedAddress, Z_EXTADDR_LEN);
+   \                     ??zmain_ext_addr_0:
+   \   000097                ; Setup parameters for call to function HalFlashRead
+   \   000097   75..08       MOV     ?V0 + 0,#0x8
+   \   00009A   75..00       MOV     ?V0 + 1,#0x0
+   \   00009D   78..         MOV     R0,#?V0 + 0
+   \   00009F   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   0000A2   7C..         MOV     R4,#aExtendedAddress & 0xff
+   \   0000A4   7D..         MOV     R5,#(aExtendedAddress >> 8) & 0xff
+   \   0000A6   7AE8         MOV     R2,#-0x18
+   \   0000A8   7B07         MOV     R3,#0x7
+   \   0000AA   797F         MOV     R1,#0x7f
+   \   0000AC   12....       LCALL   ??HalFlashRead?relay
+   \   0000AF   7402         MOV     A,#0x2
+   \   0000B1   12....       LCALL   ?DEALLOC_XSTACK8
+    226          
+    227              if (osal_memcmp(aExtendedAddress, nullAddr, Z_EXTADDR_LEN))
+   \   0000B4   85..82       MOV     DPL,?XSP + 0
+   \   0000B7   85..83       MOV     DPH,?XSP + 1
+   \   0000BA   A982         MOV     R1,DPL
+   \   0000BC   AA83         MOV     R2,DPH
+   \   0000BE   89..         MOV     ?V0 + 0,R1
+   \   0000C0   8A..         MOV     ?V0 + 1,R2
+   \   0000C2   75..00       MOV     ?V0 + 2,#0x0
+   \   0000C5                ; Setup parameters for call to function osal_memcmp
+   \   0000C5   78..         MOV     R0,#?V0 + 0
+   \   0000C7   12....       LCALL   ?PUSH_XSTACK_I_THREE
+   \   0000CA   7C08         MOV     R4,#0x8
+   \   0000CC   7D00         MOV     R5,#0x0
+   \   0000CE   79..         MOV     R1,#aExtendedAddress & 0xff
+   \   0000D0   7A..         MOV     R2,#(aExtendedAddress >> 8) & 0xff
+   \   0000D2   7B00         MOV     R3,#0x0
+   \   0000D4   12....       LCALL   ??osal_memcmp?relay
+   \   0000D7   7403         MOV     A,#0x3
+   \   0000D9   12....       LCALL   ?DEALLOC_XSTACK8
+   \   0000DC   E9           MOV     A,R1
+   \   0000DD   7003         JNZ     $+5
+   \   0000DF   02....       LJMP    ??zmain_ext_addr_2 & 0xFFFF
+    228              {
+    229                // Attempt to read the extended address from the designated location in the Info Page.
+    230                if (!osal_memcmp((uint8 *)(P_INFOPAGE+HAL_INFOP_IEEE_OSET), nullAddr, Z_EXTADDR_LEN))
+   \   0000E2                ; Setup parameters for call to function osal_memcmp
+   \   0000E2   78..         MOV     R0,#?V0 + 0
+   \   0000E4   12....       LCALL   ?PUSH_XSTACK_I_THREE
+   \   0000E7   7C08         MOV     R4,#0x8
+   \   0000E9   7D00         MOV     R5,#0x0
+   \   0000EB   790C         MOV     R1,#0xc
+   \   0000ED   7A78         MOV     R2,#0x78
+   \   0000EF   7B00         MOV     R3,#0x0
+   \   0000F1   12....       LCALL   ??osal_memcmp?relay
+   \   0000F4   7403         MOV     A,#0x3
+   \   0000F6   12....       LCALL   ?DEALLOC_XSTACK8
+   \   0000F9   E9           MOV     A,R1
+   \   0000FA   701D         JNZ     ??zmain_ext_addr_3
+    231                {
+    232                  osal_memcpy(aExtendedAddress, (uint8 *)(P_INFOPAGE+HAL_INFOP_IEEE_OSET), Z_EXTADDR_LEN);
+   \   0000FC                ; Setup parameters for call to function osal_memcpy
+   \   0000FC   75..0C       MOV     ?V0 + 0,#0xc
+   \   0000FF   75..78       MOV     ?V0 + 1,#0x78
+   \   000102   78..         MOV     R0,#?V0 + 0
+   \   000104   12....       LCALL   ?PUSH_XSTACK_I_THREE
+   \   000107   7C08         MOV     R4,#0x8
+   \   000109   7D00         MOV     R5,#0x0
+   \   00010B   7A..         MOV     R2,#aExtendedAddress & 0xff
+   \   00010D   7B..         MOV     R3,#(aExtendedAddress >> 8) & 0xff
+   \   00010F   12....       LCALL   ??osal_memcpy?relay
+   \   000112   7403         MOV     A,#0x3
+   \   000114   12....       LCALL   ?DEALLOC_XSTACK8
+   \   000117   8051         SJMP    ??zmain_ext_addr_2
+    233                }
+    234                else  // No valid extended address was found.
+    235                {
+    236                  uint8 idx;
+    237                  
+    238          #if !defined ( NV_RESTORE )
+    239                  writeNV = FALSE;  // Make this a temporary IEEE address
+    240          #endif
+    241          
+    242                  /* Attempt to create a sufficiently random extended address for expediency.
+    243                   * Note: this is only valid/legal in a test environment and
+    244                   *       must never be used for a commercial product.
+    245                   */
+    246                  for (idx = 0; idx < (Z_EXTADDR_LEN - 2);)
+   \                     ??zmain_ext_addr_3:
+   \   000119   75..00       MOV     ?V0 + 0,#0x0
+   \   00011C   801E         SJMP    ??zmain_ext_addr_4
+    247                  {
+    248                    uint16 randy = osal_rand();
+   \                     ??zmain_ext_addr_5:
+   \   00011E                ; Setup parameters for call to function osal_rand
+   \   00011E   12....       LCALL   ??osal_rand?relay
+    249                    aExtendedAddress[idx++] = LO_UINT16(randy);
+   \   000121   EA           MOV     A,R2
+   \   000122   8E82         MOV     DPL,R6
+   \   000124   8F83         MOV     DPH,R7
+   \   000126   F0           MOVX    @DPTR,A
+   \   000127   05..         INC     ?V0 + 0
+    250                    aExtendedAddress[idx++] = HI_UINT16(randy);
+   \   000129   85....       MOV     ?V0 + 2,?V0 + 0
+   \   00012C   74..         MOV     A,#aExtendedAddress & 0xff
+   \   00012E   25..         ADD     A,?V0 + 2
+   \   000130   F582         MOV     DPL,A
+   \   000132   74..         MOV     A,#(aExtendedAddress >> 8) & 0xff
+   \   000134   3400         ADDC    A,#0x0
+   \   000136   F583         MOV     DPH,A
+   \   000138   EB           MOV     A,R3
+   \   000139   F0           MOVX    @DPTR,A
+   \   00013A   05..         INC     ?V0 + 0
+    251                  }
+   \                     ??zmain_ext_addr_4:
+   \   00013C   85....       MOV     ?V0 + 2,?V0 + 0
+   \   00013F   74..         MOV     A,#aExtendedAddress & 0xff
+   \   000141   25..         ADD     A,?V0 + 2
+   \   000143   FE           MOV     R6,A
+   \   000144   74..         MOV     A,#(aExtendedAddress >> 8) & 0xff
+   \   000146   3400         ADDC    A,#0x0
+   \   000148   FF           MOV     R7,A
+   \   000149   E5..         MOV     A,?V0 + 0
+   \   00014B   C3           CLR     C
+   \   00014C   9406         SUBB    A,#0x6
+   \   00014E   40CE         JC      ??zmain_ext_addr_5
+    252                  // Next-to-MSB identifies ZigBee devicetype.
+    253          #if defined ZDO_COORDINATOR
+    254                  aExtendedAddress[idx++] = 0x10;
+   \   000150   8E82         MOV     DPL,R6
+   \   000152   8F83         MOV     DPH,R7
+   \   000154   7410         MOV     A,#0x10
+   \   000156   F0           MOVX    @DPTR,A
+    255          #elif defined RTR_NWK
+    256                  aExtendedAddress[idx++] = 0x20;
+    257          #else
+    258                  aExtendedAddress[idx++] = 0x30;
+    259          #endif
+    260                  // MSB has historical signficance.
+    261                  aExtendedAddress[idx] = 0xF8;
+   \   000157   7401         MOV     A,#0x1
+   \   000159   25..         ADD     A,?V0 + 0
+   \   00015B   F8           MOV     R0,A
+   \   00015C   74..         MOV     A,#aExtendedAddress & 0xff
+   \   00015E   28           ADD     A,R0
+   \   00015F   F582         MOV     DPL,A
+   \   000161   74..         MOV     A,#(aExtendedAddress >> 8) & 0xff
+   \   000163   3400         ADDC    A,#0x0
+   \   000165   F583         MOV     DPH,A
+   \   000167   74F8         MOV     A,#-0x8
+   \   000169   F0           MOVX    @DPTR,A
+    262                }
+    263              }
+    264          
+    265              if ( writeNV )
+    266              {
+    267                (void)osal_nv_write(ZCD_NV_EXTADDR, 0, Z_EXTADDR_LEN, aExtendedAddress);
+   \                     ??zmain_ext_addr_2:
+   \   00016A                ; Setup parameters for call to function osal_nv_write
+   \   00016A   75....       MOV     ?V0 + 0,#aExtendedAddress & 0xff
+   \   00016D   75....       MOV     ?V0 + 1,#(aExtendedAddress >> 8) & 0xff
+   \   000170   78..         MOV     R0,#?V0 + 0
+   \   000172   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   000175   75..08       MOV     ?V0 + 0,#0x8
+   \   000178   75..00       MOV     ?V0 + 1,#0x0
+   \   00017B   78..         MOV     R0,#?V0 + 0
+   \   00017D   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   000180   7C00         MOV     R4,#0x0
+   \   000182   7D00         MOV     R5,#0x0
+   \   000184   7A01         MOV     R2,#0x1
+   \   000186   7B00         MOV     R3,#0x0
+   \   000188   12....       LCALL   ??osal_nv_write?relay
+   \   00018B   7404         MOV     A,#0x4
+   \   00018D   12....       LCALL   ?DEALLOC_XSTACK8
+    268              }
+    269            }
+    270          
+    271            // Set the MAC PIB extended address according to results from above.
+    272            (void)ZMacSetReq(MAC_EXTENDED_ADDRESS, aExtendedAddress);
+   \                     ??zmain_ext_addr_1:
+   \   000190                ; Setup parameters for call to function ZMacSetReq
+   \   000190   7A..         MOV     R2,#aExtendedAddress & 0xff
+   \   000192   7B..         MOV     R3,#(aExtendedAddress >> 8) & 0xff
+   \   000194   79E2         MOV     R1,#-0x1e
+   \   000196   12....       LCALL   ??ZMacSetReq?relay
+    273          }
+   \   000199   7408         MOV     A,#0x8
+   \   00019B   12....       LCALL   ?DEALLOC_XSTACK8
+   \   00019E   7F04         MOV     R7,#0x4
+   \   0001A0   02....       LJMP    ?BANKED_LEAVE_XDATA
+    274          
+    275          /**************************************************************************************************
+    276           * @fn          zmain_dev_info
+    277           *
+    278           * @brief       This displays the IEEE (MSB to LSB) on the LCD.
+    279           *
+    280           * input parameters
+    281           *
+    282           * None.
+    283           *
+    284           * output parameters
+    285           *
+    286           * None.
+    287           *
+    288           * @return      None.
+    289           **************************************************************************************************
+    290           */
+    291          /*static void zmain_dev_info(void)
+    292          {
+    293          #ifdef LCD_SUPPORTED
+    294            uint8 i;
+    295            uint8 *xad;
+    296            uint8 lcd_buf[Z_EXTADDR_LEN*2+1];
+    297          
+    298            // Display the extended address.
+    299            xad = aExtendedAddress + Z_EXTADDR_LEN - 1;
+    300          
+    301            for (i = 0; i < Z_EXTADDR_LEN*2; xad--)
+    302            {
+    303              uint8 ch;
+    304              ch = (*xad >> 4) & 0x0F;
+    305              lcd_buf[i++] = ch + (( ch < 10 ) ? '0' : '7');
+    306              ch = *xad & 0x0F;
+    307              lcd_buf[i++] = ch + (( ch < 10 ) ? '0' : '7');
+    308            }
+    309            lcd_buf[Z_EXTADDR_LEN*2] = '\0';
+    310            HalLcdWriteString( "IEEE: ", HAL_LCD_LINE_1 );
+    311            HalLcdWriteString( (char*)lcd_buf, HAL_LCD_LINE_2 );
+    312          #endif
+    313          }
+    314          */
+    315          /*********************************************************************
+    316           * @fn      zmain_ram_init
+    317           * @brief   Initialize ram for stack "high-water-mark" observations.
+    318           * @return  none
+    319           *********************************************************************/
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    320          static void zmain_ram_init( void )
+   \                     zmain_ram_init:
+    321          {
+   \   000000   74F6         MOV     A,#-0xa
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 10
+   \   000005                ; Auto size: 0
+    322            uint8 *end;
+    323            uint8 *ptr;
+    324          
+    325            // Initialize the call (parameter) stack
+    326            end = (uint8*)CSTK_BEG;  // Lower end
+    327            ptr = (uint8*)(*( __idata uint16*)(CSTK_PTR));  // Upper end
+   \   000005   78..         MOV     R0,#SFB(XSP) & 0xff
+   \   000007   8682         MOV     DPL,@R0
+   \   000009   08           INC     R0
+   \   00000A   8683         MOV     DPH,@R0
+   \   00000C   8003         SJMP    ??zmain_ram_init_0
+    328            while ( --ptr > end )
+    329              *ptr = STACK_INIT_VALUE;
+   \                     ??zmain_ram_init_1:
+   \   00000E   74CD         MOV     A,#-0x33
+   \   000010   F0           MOVX    @DPTR,A
+   \                     ??zmain_ram_init_0:
+   \   000011   E582         MOV     A,DPL
+   \   000013   24FF         ADD     A,#-0x1
+   \   000015   F582         MOV     DPL,A
+   \   000017   E583         MOV     A,DPH
+   \   000019   34FF         ADDC    A,#-0x1
+   \   00001B   F583         MOV     DPH,A
+   \   00001D   C3           CLR     C
+   \   00001E   74..         MOV     A,#SFB(XSTACK) & 0xff
+   \   000020   9582         SUBB    A,DPL
+   \   000022   74..         MOV     A,#(SFB(XSTACK) >> 8) & 0xff
+   \   000024   9583         SUBB    A,DPH
+   \   000026   40E6         JC      ??zmain_ram_init_1
+    330          
+    331            // Initialize the return (address) stack
+    332            ptr = (uint8*)RSTK_END - 1;  // Upper end
+   \   000028   7582..       MOV     DPL,#(SFE(ISTACK) + 255) & 0xff
+   \   00002B   7583..       MOV     DPH,#((SFE(ISTACK) - 1) >> 8) & 0xff
+   \   00002E   8004         SJMP    ??zmain_ram_init_2
+    333            while ( --ptr > (uint8*)SP )
+    334              *(__idata uint8*)ptr = STACK_INIT_VALUE;
+   \                     ??zmain_ram_init_3:
+   \   000030   A882         MOV     R0,DPL
+   \   000032   76CD         MOV     @R0,#-0x33
+   \                     ??zmain_ram_init_2:
+   \   000034   E581         MOV     A,0x81
+   \   000036   F5..         MOV     ?V0 + 0,A
+   \   000038   E582         MOV     A,DPL
+   \   00003A   24FF         ADD     A,#-0x1
+   \   00003C   F582         MOV     DPL,A
+   \   00003E   E583         MOV     A,DPH
+   \   000040   34FF         ADDC    A,#-0x1
+   \   000042   F583         MOV     DPH,A
+   \   000044   C3           CLR     C
+   \   000045   E5..         MOV     A,?V0 + 0
+   \   000047   9582         SUBB    A,DPL
+   \   000049   E4           CLR     A
+   \   00004A   9583         SUBB    A,DPH
+   \   00004C   40E2         JC      ??zmain_ram_init_3
+    335          }
+   \   00004E   7F02         MOV     R7,#0x2
+   \   000050   02....       LJMP    ?BANKED_LEAVE_XDATA
+   \   000053                REQUIRE `SP`
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??main?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    main
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??zmain_vdd_check?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    zmain_vdd_check
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??zmain_ext_addr?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    zmain_ext_addr
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??zmain_ram_init?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    zmain_ram_init
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     `?<Constant {255, 255, 255, 255, 255, 255, 255,`:
+   \   000000   FF           DB 255
+   \   000001   FF           DB 255
+   \   000002   FF           DB 255
+   \   000003   FF           DB 255
+   \   000004   FF           DB 255
+   \   000005   FF           DB 255
+   \   000006   FF           DB 255
+   \   000007   FF           DB 255
+    336          
+    337          /*#ifdef LCD_SUPPORTED
+    338          *********************************************************************
+    339           * @fn      zmain_lcd_init
+    340           * @brief   Initialize LCD at start up.
+    341           * @return  none
+    342           *********************************************************************/
+    343          /*static void zmain_lcd_init ( void )
+    344          {
+    345          #ifdef SERIAL_DEBUG_SUPPORTED
+    346            {
+    347              HalLcdWriteString( "TexasInstruments", HAL_LCD_LINE_1 );
+    348          
+    349          #if defined( MT_MAC_FUNC )
+    350          #if defined( ZDO_COORDINATOR )
+    351                HalLcdWriteString( "MAC-MT Coord", HAL_LCD_LINE_2 );
+    352          #else
+    353                HalLcdWriteString( "MAC-MT Device", HAL_LCD_LINE_2 );
+    354          #endif // ZDO
+    355          #elif defined( MT_NWK_FUNC )
+    356          #if defined( ZDO_COORDINATOR )
+    357                HalLcdWriteString( "NWK Coordinator", HAL_LCD_LINE_2 );
+    358          #else
+    359                HalLcdWriteString( "NWK Device", HAL_LCD_LINE_2 );
+    360          #endif // ZDO
+    361          #endif // MT_FUNC
+    362            }
+    363          #endif // SERIAL_DEBUG_SUPPORTED
+    364          }
+    365          #endif
+    366          */
+    367          /*********************************************************************
+    368          *********************************************************************/
+
+   Maximum stack usage in bytes:
+
+     Function               ISTACK PSTACK XSTACK
+     --------               ------ ------ ------
+     main                       0      0      0
+       -> osal_int_disable      0      0      0
+       -> zmain_vdd_check       0      0      0
+       -> zmain_ram_init        0      0      0
+       -> InitBoard             0      0      0
+       -> HalDriverInit         0      0      0
+       -> osal_nv_init          0      0      0
+       -> zgInit                0      0      0
+       -> ZMacInit              0      0      0
+       -> zmain_ext_addr        0      0      0
+       -> afInit                0      0      0
+       -> osal_init_system      0      0      0
+       -> osal_int_enable       0      0      0
+       -> InitBoard             0      0      0
+       -> osal_start_system     0      0      0
+     zmain_ext_addr             2      0     24
+       -> osal_nv_item_init     0      0     44
+       -> osal_nv_read          0      0     48
+       -> osal_memcmp           0      0     46
+       -> HalFlashRead          0      0     44
+       -> osal_memcmp           0      0     46
+       -> osal_memcmp           0      0     46
+       -> osal_memcpy           0      0     46
+       -> osal_rand             0      0     40
+       -> osal_nv_write         0      0     48
+       -> ZMacSetReq            0      0     40
+     zmain_ram_init             0      0     10
+     zmain_vdd_check            0      0      9
+       -> HalAdcCheckVdd        0      0     18
+       -> Onboard_wait          0      0     18
+       -> Onboard_wait          0      0     18
+       -> Onboard_wait          0      0     18
+
+
+   Segment part sizes:
+
+     Function/Label                                 Bytes
+     --------------                                 -----
+     SP                                                1
+     P0INP                                             1
+     _A_P1                                             1
+     SLEEPSTA                                          1
+     CLKCONSTA                                         1
+     SLEEPCMD                                          1
+     CLKCONCMD                                         1
+     P0DIR                                             1
+     P1DIR                                             1
+     main                                            145
+     zmain_vdd_check                                  94
+     zmain_ext_addr                                  419
+     zmain_ram_init                                   83
+     ??main?relay                                      6
+     ??zmain_vdd_check?relay                           6
+     ??zmain_ext_addr?relay                            6
+     ??zmain_ram_init?relay                            6
+     ?<Constant {255, 255, 255, 255, 255, 255, 255,    8
+
+ 
+ 741 bytes in segment BANKED_CODE
+  24 bytes in segment BANK_RELAYS
+   9 bytes in segment SFR_AN
+   8 bytes in segment XDATA_ROM_C
+ 
+ 765 bytes of CODE  memory
+   8 bytes of CONST memory
+   0 bytes of DATA  memory (+ 9 bytes shared)
+
+Errors: none
+Warnings: none

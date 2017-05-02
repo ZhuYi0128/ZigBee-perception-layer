@@ -1,0 +1,1005 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V8.10.3.10338/W32 for 8051         12/Oct/2016  15:54:23 #
+# Copyright 2004-2011 IAR Systems AB.                                         #
+#                                                                             #
+#    Core               =  plain                                              #
+#    Code model         =  banked                                             #
+#    Data model         =  large                                              #
+#    Calling convention =  xdata reentrant                                    #
+#    Constant location  =  data_rom                                           #
+#    Dptr setup         =  1,16                                               #
+#    Source file        =  G:\研究生\2016 电赛  决赛\8.11\Projects\zstack\Uti #
+#                          lities\SerialApp\Source\B_LUX_V20.c                #
+#    Command line       =  -f "G:\研究生\2016 电赛                            #
+#                          决赛\8.11\Projects\zstack\Utilities\SerialApp\CC25 #
+#                          30DB\..\..\..\Tools\CC2530DB\f8wEndev.cfg"         #
+#                          (-DCPU32MHZ -DROOT=__near_func -DBLINK_LEDS) -f    #
+#                          "G:\研究生\2016 电赛  决赛\8.11\Projects\zstack\Ut #
+#                          ilities\SerialApp\CC2530DB\..\..\..\Tools\CC2530DB #
+#                          \f8wConfig.cfg" (-DSECURE=0 -DZG_SECURE_DYNAMIC=0  #
+#                          -DREFLECTOR -DDEFAULT_CHANLIST=0x00000800          #
+#                          -DZDAPP_CONFIG_PAN_ID=0xFFF1                       #
+#                          -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_MA #
+#                          SK=0x007F -DBEACON_REQUEST_DELAY=100               #
+#                          -DBEACON_REQ_DELAY_MASK=0x00FF                     #
+#                          -DROUTE_EXPIRY_TIME=30 -DAPSC_ACK_WAIT_DURATION_PO #
+#                          LLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=7             #
+#                          -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3    #
+#                          -DNWK_MAX_DATA_RETRIES=2                           #
+#                          -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9         #
+#                          -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=40           #
+#                          -DNWK_MAX_BINDING_ENTRIES=4                        #
+#                          -DMAX_BINDING_CLUSTER_IDS=4 "-DDEFAULT_KEY={0x01,  #
+#                          0x03, 0x05, 0x07, 0x09, 0x0B, 0x0D, 0x0F, 0x00,    #
+#                          0x02, 0x04, 0x06, 0x08, 0x0A, 0x0C, 0x0D}"         #
+#                          -DMAC_MAX_FRAME_SIZE=116 "-DCONST=const __code"    #
+#                          -DGENERIC=__generic -DRFD_RCVC_ALWAYS_ON=FALSE     #
+#                          -DPOLL_RATE=1000 -DQUEUED_POLL_RATE=100            #
+#                          -DRESPONSE_POLL_RATE=100) -DREJOIN_POLL_RATE=440   #
+#                          "G:\研究生\2016 电赛  决赛\8.11\Projects\zstack\Ut #
+#                          ilities\SerialApp\Source\B_LUX_V20.c" -D           #
+#                          ZIGBEEPRO -D NWK_AUTO_POLL -D HAL_UART=TRUE -D     #
+#                          SERIAL_APP_PORT=0 -D LCD_SUPPORTED -D              #
+#                          xPOWER_SAVING -lC "G:\研究生\2016 电赛             #
+#                          决赛\8.11\Projects\zstack\Utilities\SerialApp\CC25 #
+#                          30DB\EndDeviceEB-Pro\List\" -lA "G:\研究生\2016    #
+#                          电赛  决赛\8.11\Projects\zstack\Utilities\SerialAp #
+#                          p\CC2530DB\EndDeviceEB-Pro\List\" --diag_suppress  #
+#                          Pe001,Pa010 -o "G:\研究生\2016 电赛                #
+#                          决赛\8.11\Projects\zstack\Utilities\SerialApp\CC25 #
+#                          30DB\EndDeviceEB-Pro\Obj\" -e --no_unroll          #
+#                          --no_inline --no_tbaa --debug --core=plain         #
+#                          --dptr=16,1 --data_model=large                     #
+#                          --code_model=banked --calling_convention=xdata_ree #
+#                          ntrant --place_constants=data_rom                  #
+#                          --nr_virtual_regs 8 -I "G:\研究生\2016 电赛        #
+#                          决赛\8.11\Projects\zstack\Utilities\SerialApp\CC25 #
+#                          30DB\" -I "G:\研究生\2016 电赛                     #
+#                          决赛\8.11\Projects\zstack\Utilities\SerialApp\CC25 #
+#                          30DB\..\SOURCE\" -I "G:\研究生\2016 电赛           #
+#                          决赛\8.11\Projects\zstack\Utilities\SerialApp\CC25 #
+#                          30DB\..\..\..\ZMAIN\TI2530DB\" -I "G:\研究生\2016  #
+#                          电赛  决赛\8.11\Projects\zstack\Utilities\SerialAp #
+#                          p\CC2530DB\..\..\..\..\..\COMPONENTS\MT\" -I       #
+#                          "G:\研究生\2016 电赛  决赛\8.11\Projects\zstack\Ut #
+#                          ilities\SerialApp\CC2530DB\..\..\..\..\..\COMPONEN #
+#                          TS\HAL\INCLUDE\" -I "G:\研究生\2016 电赛           #
+#                          决赛\8.11\Projects\zstack\Utilities\SerialApp\CC25 #
+#                          30DB\..\..\..\..\..\COMPONENTS\HAL\TARGET\CC2530EB #
+#                          \" -I "G:\研究生\2016 电赛                         #
+#                          决赛\8.11\Projects\zstack\Utilities\SerialApp\CC25 #
+#                          30DB\..\..\..\..\..\COMPONENTS\OSAL\MCU\CCSOC\"    #
+#                          -I "G:\研究生\2016 电赛                            #
+#                          决赛\8.11\Projects\zstack\Utilities\SerialApp\CC25 #
+#                          30DB\..\..\..\..\..\COMPONENTS\OSAL\INCLUDE\" -I   #
+#                          "G:\研究生\2016 电赛  决赛\8.11\Projects\zstack\Ut #
+#                          ilities\SerialApp\CC2530DB\..\..\..\..\..\COMPONEN #
+#                          TS\STACK\AF\" -I "G:\研究生\2016 电赛              #
+#                          决赛\8.11\Projects\zstack\Utilities\SerialApp\CC25 #
+#                          30DB\..\..\..\..\..\COMPONENTS\STACK\NWK\" -I      #
+#                          "G:\研究生\2016 电赛  决赛\8.11\Projects\zstack\Ut #
+#                          ilities\SerialApp\CC2530DB\..\..\..\..\..\COMPONEN #
+#                          TS\STACK\SEC\" -I "G:\研究生\2016 电赛             #
+#                          决赛\8.11\Projects\zstack\Utilities\SerialApp\CC25 #
+#                          30DB\..\..\..\..\..\COMPONENTS\STACK\SAPI\" -I     #
+#                          "G:\研究生\2016 电赛  决赛\8.11\Projects\zstack\Ut #
+#                          ilities\SerialApp\CC2530DB\..\..\..\..\..\COMPONEN #
+#                          TS\STACK\SYS\" -I "G:\研究生\2016 电赛             #
+#                          决赛\8.11\Projects\zstack\Utilities\SerialApp\CC25 #
+#                          30DB\..\..\..\..\..\COMPONENTS\STACK\ZDO\" -I      #
+#                          "G:\研究生\2016 电赛  决赛\8.11\Projects\zstack\Ut #
+#                          ilities\SerialApp\CC2530DB\..\..\..\..\..\COMPONEN #
+#                          TS\ZMAC\F8W\" -I "G:\研究生\2016 电赛              #
+#                          决赛\8.11\Projects\zstack\Utilities\SerialApp\CC25 #
+#                          30DB\..\..\..\..\..\COMPONENTS\ZMAC\" -I           #
+#                          "G:\研究生\2016 电赛  决赛\8.11\Projects\zstack\Ut #
+#                          ilities\SerialApp\CC2530DB\..\..\..\..\..\COMPONEN #
+#                          TS\SERVICES\SADDR\" -I "G:\研究生\2016 电赛        #
+#                          决赛\8.11\Projects\zstack\Utilities\SerialApp\CC25 #
+#                          30DB\..\..\..\..\..\COMPONENTS\SERVICES\SDATA\"    #
+#                          -I "G:\研究生\2016 电赛                            #
+#                          决赛\8.11\Projects\zstack\Utilities\SerialApp\CC25 #
+#                          30DB\..\..\..\..\..\COMPONENTS\MAC\INCLUDE\" -I    #
+#                          "G:\研究生\2016 电赛  决赛\8.11\Projects\zstack\Ut #
+#                          ilities\SerialApp\CC2530DB\..\..\..\..\..\COMPONEN #
+#                          TS\MAC\HIGH_LEVEL\" -I "G:\研究生\2016 电赛        #
+#                          决赛\8.11\Projects\zstack\Utilities\SerialApp\CC25 #
+#                          30DB\..\..\..\..\..\COMPONENTS\MAC\LOW_LEVEL\srf04 #
+#                          \" -I "G:\研究生\2016 电赛                         #
+#                          决赛\8.11\Projects\zstack\Utilities\SerialApp\CC25 #
+#                          30DB\..\..\..\..\..\COMPONENTS\MAC\LOW_LEVEL\srf04 #
+#                          \SINGLE_CHIP\" -Om --require_prototypes            #
+#    List file          =  G:\研究生\2016 电赛  决赛\8.11\Projects\zstack\Uti #
+#                          lities\SerialApp\CC2530DB\EndDeviceEB-Pro\List\B_L #
+#                          UX_V20.lst                                         #
+#    Object file        =  G:\研究生\2016 电赛  决赛\8.11\Projects\zstack\Uti #
+#                          lities\SerialApp\CC2530DB\EndDeviceEB-Pro\Obj\B_LU #
+#                          X_V20.r51                                          #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+G:\研究生\2016 电赛  决赛\8.11\Projects\zstack\Utilities\SerialApp\Source\B_LUX_V20.c
+      1          //***************************************
+      2          // B_LUX_V20采集程序
+      3          //****************************************
+      4          #include  <math.h>    //Keil library  
+      5          #include  <stdio.h>   //Keil library
+      6          #include "B_LUX_V20.h"
+
+   \                                 In  segment SFR_AN, at 0x80
+   \   union <unnamed> volatile __sfr _A_P0
+   \                     _A_P0:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xf4
+   \   unsigned char volatile __sfr P1SEL
+   \                     P1SEL:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xfd
+   \   unsigned char volatile __sfr P0DIR
+   \                     P0DIR:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xfe
+   \   unsigned char volatile __sfr P1DIR
+   \                     P1DIR:
+   \   000000                DS 1
+      7          
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+      8          uint8    BUF_0[8];                       //接收数据缓存区      	
+   \                     BUF_0:
+   \   000000                DS 8
+   \   000008                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+      9          uint16   dis_data_0;                     //变量
+   \                     dis_data_0:
+   \   000000                DS 2
+   \   000002                REQUIRE __INIT_XDATA_Z
+     10          
+     11          /*---------------------------------------------------------------------
+     12           功能描述: 延时纳秒 不同的工作环境,需要调整此函数
+     13           参数说明: 无	
+     14           函数返回: 无
+     15           ---------------------------------------------------------------------*/
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     16          void B_LUX_delay_nms(uint16 k)	
+   \                     B_LUX_delay_nms:
+     17          {						
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+     18            uint16 i,j;				
+     19            for(i=0;i<k;i++)
+   \   000000   7C00         MOV     R4,#0x0
+   \   000002   7D00         MOV     R5,#0x0
+   \   000004   8019         SJMP    ??B_LUX_delay_nms_0
+     20            {			
+     21              for(j=0;j<6000;j++)			
+   \                     ??B_LUX_delay_nms_1:
+   \   000006   E8           MOV     A,R0
+   \   000007   2401         ADD     A,#0x1
+   \   000009   08           INC     R0
+   \   00000A   E9           MOV     A,R1
+   \   00000B   3400         ADDC    A,#0x0
+   \   00000D   F9           MOV     R1,A
+   \                     ??B_LUX_delay_nms_2:
+   \   00000E   C3           CLR     C
+   \   00000F   E8           MOV     A,R0
+   \   000010   9470         SUBB    A,#0x70
+   \   000012   E9           MOV     A,R1
+   \   000013   9417         SUBB    A,#0x17
+   \   000015   40EF         JC      ??B_LUX_delay_nms_1
+   \   000017   EC           MOV     A,R4
+   \   000018   2401         ADD     A,#0x1
+   \   00001A   0C           INC     R4
+   \   00001B   ED           MOV     A,R5
+   \   00001C   3400         ADDC    A,#0x0
+   \   00001E   FD           MOV     R5,A
+   \                     ??B_LUX_delay_nms_0:
+   \   00001F   C3           CLR     C
+   \   000020   EC           MOV     A,R4
+   \   000021   9A           SUBB    A,R2
+   \   000022   ED           MOV     A,R5
+   \   000023   9B           SUBB    A,R3
+   \   000024   5006         JNC     ??B_LUX_delay_nms_3
+   \   000026   7800         MOV     R0,#0x0
+   \   000028   7900         MOV     R1,#0x0
+   \   00002A   80E2         SJMP    ??B_LUX_delay_nms_2
+     22              {
+     23                ;
+     24              }
+     25            }						
+     26          }					
+   \                     ??B_LUX_delay_nms_3:
+   \   00002C   02....       LJMP    ?BRET
+     27          
+     28          /*---------------------------------------------------------------------
+     29           功能描述: 延时5微秒  不同的工作环境,需要调整此函数
+     30           参数说明: 无	
+     31           函数返回: 无
+     32           ---------------------------------------------------------------------*/
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     33          void B_LUX_Delay5us()
+   \                     B_LUX_Delay5us:
+     34          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+     35            uint8 n = 50;
+   \   000000   7832         MOV     R0,#0x32
+     36            
+     37            while (n--);
+   \                     ??B_LUX_Delay5us_0:
+   \   000002   E8           MOV     A,R0
+   \   000003   F9           MOV     R1,A
+   \   000004   74FF         MOV     A,#-0x1
+   \   000006   29           ADD     A,R1
+   \   000007   18           DEC     R0
+   \   000008   04           INC     A
+   \   000009   70F7         JNZ     ??B_LUX_Delay5us_0
+     38          }
+   \   00000B   02....       LJMP    ?BRET
+     39          
+     40          /*---------------------------------------------------------------------
+     41           功能描述: 延时5毫秒  不同的工作环境,需要调整此函数
+     42           参数说明: 无	
+     43           函数返回: 无
+     44           ---------------------------------------------------------------------*/
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     45          void B_LUX_Delay5ms()
+   \                     B_LUX_Delay5ms:
+     46          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+     47            uint16 n = 50000;
+   \   000000   7850         MOV     R0,#0x50
+   \   000002   79C3         MOV     R1,#-0x3d
+     48            
+     49            while (n--);
+   \                     ??B_LUX_Delay5ms_0:
+   \   000004   E8           MOV     A,R0
+   \   000005   FA           MOV     R2,A
+   \   000006   E9           MOV     A,R1
+   \   000007   FB           MOV     R3,A
+   \   000008   EA           MOV     A,R2
+   \   000009   24FF         ADD     A,#-0x1
+   \   00000B   18           DEC     R0
+   \   00000C   EB           MOV     A,R3
+   \   00000D   34FF         ADDC    A,#-0x1
+   \   00000F   F9           MOV     R1,A
+   \   000010   EA           MOV     A,R2
+   \   000011   4B           ORL     A,R3
+   \   000012   70F0         JNZ     ??B_LUX_Delay5ms_0
+     50          }
+   \   000014   02....       LJMP    ?BRET
+     51          
+     52          /*---------------------------------------------------------------------
+     53           功能描述: 起始信号
+     54           参数说明: 无	
+     55           函数返回: 无
+     56           ---------------------------------------------------------------------*/
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     57          void B_LUX_Start()
+   \                     B_LUX_Start:
+     58          {
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+     59            B_LUX_SDA0_H;                    //拉高数据线
+   \   000004   D286         SETB    0x80.6
+     60            B_LUX_SCL0_H;                    //拉高时钟线
+   \   000006   D280         SETB    0x80.0
+     61            B_LUX_Delay5us();                 //延时
+   \   000008                ; Setup parameters for call to function B_LUX_Delay5us
+   \   000008   12....       LCALL   ??B_LUX_Delay5us?relay
+     62            B_LUX_SDA0_L;                    //产生下降沿
+   \   00000B   C286         CLR     0x80.6
+     63            B_LUX_Delay5us();                 //延时
+   \   00000D                ; Setup parameters for call to function B_LUX_Delay5us
+   \   00000D   12....       LCALL   ??B_LUX_Delay5us?relay
+     64            B_LUX_SCL0_L;                    //拉低时钟线
+   \   000010   C280         CLR     0x80.0
+     65          }
+   \   000012   D083         POP     DPH
+   \   000014   D082         POP     DPL
+   \   000016   02....       LJMP    ?BRET
+   \   000019                REQUIRE _A_P0
+     66          
+     67          /*---------------------------------------------------------------------
+     68           功能描述: 停止信号
+     69           参数说明: 无	
+     70           函数返回: 无
+     71           ---------------------------------------------------------------------*/
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     72          void B_LUX_Stop()
+   \                     B_LUX_Stop:
+     73          {
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+     74            B_LUX_SDA0_L;                    //拉低数据线
+   \   000004   C286         CLR     0x80.6
+     75            B_LUX_SCL0_H;                    //拉高时钟线
+   \   000006   D280         SETB    0x80.0
+     76            B_LUX_Delay5us();                 //延时
+   \   000008                ; Setup parameters for call to function B_LUX_Delay5us
+   \   000008   12....       LCALL   ??B_LUX_Delay5us?relay
+     77            B_LUX_SDA0_H;                    //产生上升沿
+   \   00000B   D286         SETB    0x80.6
+     78            B_LUX_Delay5us();                 //延时
+   \   00000D                ; Setup parameters for call to function B_LUX_Delay5us
+   \   00000D   12....       LCALL   ??B_LUX_Delay5us?relay
+     79            B_LUX_SCL0_L;
+   \   000010   C280         CLR     0x80.0
+     80            B_LUX_Delay5us();
+   \   000012                ; Setup parameters for call to function B_LUX_Delay5us
+   \   000012   12....       LCALL   ??B_LUX_Delay5us?relay
+     81          }
+   \   000015   D083         POP     DPH
+   \   000017   D082         POP     DPL
+   \   000019   02....       LJMP    ?BRET
+   \   00001C                REQUIRE _A_P0
+     82          
+     83          /*---------------------------------------------------------------------
+     84           功能描述: 发送应答信号
+     85           参数说明: ack - 应答信号(0:ACK 1:NAK)
+     86           函数返回: 无
+     87           ---------------------------------------------------------------------*/
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     88          void B_LUX_SendACK(uint8 ack)
+   \                     B_LUX_SendACK:
+     89          {
+   \   000000   74F7         MOV     A,#-0x9
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 9
+   \   000005                ; Auto size: 0
+   \   000005   E9           MOV     A,R1
+     90            if (ack&0x01)	B_LUX_SDA0_H;		 //写应答信号
+   \   000006   A2E0         MOV     C,0xE0 /* A   */.0
+   \   000008   5004         JNC     ??B_LUX_SendACK_0
+   \   00000A   D286         SETB    0x80.6
+   \   00000C   8002         SJMP    ??B_LUX_SendACK_1
+     91            else	B_LUX_SDA0_L;
+   \                     ??B_LUX_SendACK_0:
+   \   00000E   C286         CLR     0x80.6
+     92            
+     93            B_LUX_SCL0_H;                    //拉高时钟线
+   \                     ??B_LUX_SendACK_1:
+   \   000010   D280         SETB    0x80.0
+     94            B_LUX_Delay5us();                 //延时
+   \   000012                ; Setup parameters for call to function B_LUX_Delay5us
+   \   000012   12....       LCALL   ??B_LUX_Delay5us?relay
+     95            B_LUX_SCL0_L;                    //拉低时钟线
+   \   000015   C280         CLR     0x80.0
+     96            B_LUX_SDA0_H;
+   \   000017   D286         SETB    0x80.6
+     97            B_LUX_Delay5us();                 //延时
+   \   000019                ; Setup parameters for call to function B_LUX_Delay5us
+   \   000019   12....       LCALL   ??B_LUX_Delay5us?relay
+     98          }
+   \   00001C   7F01         MOV     R7,#0x1
+   \   00001E   02....       LJMP    ?BANKED_LEAVE_XDATA
+   \   000021                REQUIRE _A_P0
+     99          
+    100          /*---------------------------------------------------------------------
+    101           功能描述: 接收应答信号
+    102           参数说明: 无
+    103           函数返回: 返回应答信号
+    104           ---------------------------------------------------------------------*/
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    105          uint8 B_LUX_RecvACK()
+   \                     B_LUX_RecvACK:
+    106          {
+   \   000000   74F7         MOV     A,#-0x9
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 9
+   \   000005                ; Auto size: 0
+    107            uint8 CY = 0x00;
+    108            B_LUX_SDA0_H;
+   \   000005   D286         SETB    0x80.6
+    109            
+    110            B_LUX_SDA0_I;
+   \   000007   53FEBF       ANL     0xfe,#0xbf
+    111            
+    112            B_LUX_SCL0_H;              //拉高时钟线
+   \   00000A   D280         SETB    0x80.0
+    113            B_LUX_Delay5us();                 //延时
+   \   00000C                ; Setup parameters for call to function B_LUX_Delay5us
+   \   00000C   12....       LCALL   ??B_LUX_Delay5us?relay
+    114            
+    115            
+    116            CY |= B_LUX_SDA0_DAT;    //读应答信号
+   \   00000F   A286         MOV     C,0x80.6
+   \   000011   E4           CLR     A
+   \   000012   33           RLC     A
+   \   000013   FE           MOV     R6,A
+    117            
+    118            B_LUX_Delay5us();                 //延时
+   \   000014                ; Setup parameters for call to function B_LUX_Delay5us
+   \   000014   12....       LCALL   ??B_LUX_Delay5us?relay
+    119            
+    120            B_LUX_SCL0_L;              //拉低时钟线
+   \   000017   C280         CLR     0x80.0
+    121            
+    122            B_LUX_SDA0_O;
+   \   000019   43FD40       ORL     0xfd,#0x40
+    123            
+    124            return CY;
+   \   00001C   EE           MOV     A,R6
+   \   00001D   F9           MOV     R1,A
+   \   00001E   7F01         MOV     R7,#0x1
+   \   000020   02....       LJMP    ?BANKED_LEAVE_XDATA
+   \   000023                REQUIRE _A_P0
+   \   000023                REQUIRE P1DIR
+   \   000023                REQUIRE P0DIR
+    125          }
+    126          
+    127          /*---------------------------------------------------------------------
+    128           功能描述: 向IIC总线发送一个字节数据
+    129           参数说明: dat - 写字节
+    130           函数返回: 无
+    131           ---------------------------------------------------------------------*/
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    132          void B_LUX_SendByte(uint8 dat)
+   \                     B_LUX_SendByte:
+    133          {
+   \   000000   74F7         MOV     A,#-0x9
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 9
+   \   000005                ; Auto size: 0
+   \   000005   E9           MOV     A,R1
+   \   000006   FF           MOV     R7,A
+    134            uint8 i;
+    135            
+    136            for (i=0; i<8; i++)         			//8位计数器
+   \   000007   7E00         MOV     R6,#0x0
+   \   000009   8014         SJMP    ??B_LUX_SendByte_0
+    137            {
+    138              if (dat&0x80)	B_LUX_SDA0_H;
+    139              else	B_LUX_SDA0_L;              //送数据口
+   \                     ??B_LUX_SendByte_1:
+   \   00000B   C286         CLR     0x80.6
+    140              
+    141              B_LUX_Delay5us();             			//延时
+   \                     ??B_LUX_SendByte_2:
+   \   00000D                ; Setup parameters for call to function B_LUX_Delay5us
+   \   00000D   12....       LCALL   ??B_LUX_Delay5us?relay
+    142              B_LUX_SCL0_H;                		//拉高时钟线
+   \   000010   D280         SETB    0x80.0
+    143              B_LUX_Delay5us();             			//延时
+   \   000012                ; Setup parameters for call to function B_LUX_Delay5us
+   \   000012   12....       LCALL   ??B_LUX_Delay5us?relay
+    144              B_LUX_SCL0_L;                		//拉低时钟线
+   \   000015   C280         CLR     0x80.0
+    145              B_LUX_Delay5us();             			//延时
+   \   000017                ; Setup parameters for call to function B_LUX_Delay5us
+   \   000017   12....       LCALL   ??B_LUX_Delay5us?relay
+    146              dat <<= 1;              			//移出数据的最高位
+   \   00001A   EF           MOV     A,R7
+   \   00001B   C3           CLR     C
+   \   00001C   33           RLC     A
+   \   00001D   FF           MOV     R7,A
+   \   00001E   0E           INC     R6
+   \                     ??B_LUX_SendByte_0:
+   \   00001F   EE           MOV     A,R6
+   \   000020   C3           CLR     C
+   \   000021   9408         SUBB    A,#0x8
+   \   000023   5009         JNC     ??B_LUX_SendByte_3
+   \   000025   EF           MOV     A,R7
+   \   000026   A2E7         MOV     C,0xE0 /* A   */.7
+   \   000028   50E1         JNC     ??B_LUX_SendByte_1
+   \   00002A   D286         SETB    0x80.6
+   \   00002C   80DF         SJMP    ??B_LUX_SendByte_2
+    147            }
+    148            
+    149            B_LUX_RecvACK();
+   \                     ??B_LUX_SendByte_3:
+   \   00002E                ; Setup parameters for call to function B_LUX_RecvACK
+   \   00002E   12....       LCALL   ??B_LUX_RecvACK?relay
+    150          }
+   \   000031   7F01         MOV     R7,#0x1
+   \   000033   02....       LJMP    ?BANKED_LEAVE_XDATA
+   \   000036                REQUIRE _A_P0
+    151          
+    152          /*---------------------------------------------------------------------
+    153           功能描述: 从IIC总线接收一个字节数据
+    154           参数说明: 无
+    155           函数返回: 接收字节
+    156           ---------------------------------------------------------------------*/
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    157          uint8 B_LUX_RecvByte()
+   \                     B_LUX_RecvByte:
+    158          {
+   \   000000   74F7         MOV     A,#-0x9
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 9
+   \   000005                ; Auto size: 0
+    159            uint8 i;
+    160            uint8 dat = 0;
+   \   000005   75..00       MOV     ?V0 + 0,#0x0
+    161            B_LUX_SDA0_I;
+   \   000008   53FEBF       ANL     0xfe,#0xbf
+    162            
+    163            B_LUX_SDA0_H;                  //使能内部上拉,准备读取数据,
+   \   00000B   D286         SETB    0x80.6
+    164            for (i=0; i<8; i++)         	//8位计数器
+   \   00000D   7E00         MOV     R6,#0x0
+   \   00000F   8017         SJMP    ??B_LUX_RecvByte_0
+    165            {
+    166              B_LUX_SCL0_H;              //拉高时钟线
+   \                     ??B_LUX_RecvByte_1:
+   \   000011   D280         SETB    0x80.0
+    167              B_LUX_Delay5us();             	//延时
+   \   000013                ; Setup parameters for call to function B_LUX_Delay5us
+   \   000013   12....       LCALL   ??B_LUX_Delay5us?relay
+    168              dat |= B_LUX_SDA0_DAT;     //读数据               
+   \   000016   A286         MOV     C,0x80.6
+   \   000018   E4           CLR     A
+   \   000019   33           RLC     A
+   \   00001A   42..         ORL     ?V0 + 0,A
+    169              B_LUX_SCL0_L;              //拉低时钟线
+   \   00001C   C280         CLR     0x80.0
+    170              B_LUX_Delay5us();             	//延时
+   \   00001E                ; Setup parameters for call to function B_LUX_Delay5us
+   \   00001E   12....       LCALL   ??B_LUX_Delay5us?relay
+    171              
+    172              dat <<= 1;	
+   \   000021   E5..         MOV     A,?V0 + 0
+   \   000023   C3           CLR     C
+   \   000024   33           RLC     A
+   \   000025   F5..         MOV     ?V0 + 0,A
+    173            }
+   \   000027   0E           INC     R6
+   \                     ??B_LUX_RecvByte_0:
+   \   000028   EE           MOV     A,R6
+   \   000029   C3           CLR     C
+   \   00002A   9408         SUBB    A,#0x8
+   \   00002C   40E3         JC      ??B_LUX_RecvByte_1
+    174            B_LUX_SDA0_O;
+   \   00002E   43FD40       ORL     0xfd,#0x40
+    175            
+    176            return dat;
+   \   000031   A9..         MOV     R1,?V0 + 0
+   \   000033   7F01         MOV     R7,#0x1
+   \   000035   02....       LJMP    ?BANKED_LEAVE_XDATA
+   \   000038                REQUIRE P1DIR
+   \   000038                REQUIRE _A_P0
+   \   000038                REQUIRE P0DIR
+    177          }
+    178          
+    179          /*---------------------------------------------------------------------
+    180           功能描述: 写BH1750
+    181           参数说明: REG_Address - 寄存器地址
+    182           函数返回: 无
+    183           ---------------------------------------------------------------------*/
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    184          void B_LUX_Single_Write(uint8 REG_Address)
+   \                     B_LUX_Single_Write:
+    185          {
+   \   000000   74F7         MOV     A,#-0x9
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 9
+   \   000005                ; Auto size: 0
+   \   000005   E9           MOV     A,R1
+   \   000006   FE           MOV     R6,A
+    186            B_LUX_Start();                  //起始信号
+   \   000007                ; Setup parameters for call to function B_LUX_Start
+   \   000007   12....       LCALL   ??B_LUX_Start?relay
+    187            B_LUX_SendByte(B_LUX_SlaveAddress);   //发送设备地址+写信号
+   \   00000A                ; Setup parameters for call to function B_LUX_SendByte
+   \   00000A   7946         MOV     R1,#0x46
+   \   00000C   12....       LCALL   ??B_LUX_SendByte?relay
+    188            B_LUX_SendByte(REG_Address);    //内部寄存器地址
+   \   00000F                ; Setup parameters for call to function B_LUX_SendByte
+   \   00000F   EE           MOV     A,R6
+   \   000010   F9           MOV     R1,A
+   \   000011   12....       LCALL   ??B_LUX_SendByte?relay
+    189            B_LUX_Stop();                   //发送停止信号
+   \   000014                ; Setup parameters for call to function B_LUX_Stop
+   \   000014   12....       LCALL   ??B_LUX_Stop?relay
+    190          }
+   \   000017   7F01         MOV     R7,#0x1
+   \   000019   02....       LJMP    ?BANKED_LEAVE_XDATA
+    191          
+    192          /*---------------------------------------------------------------------
+    193           功能描述: 连续读出BH1750内部数据
+    194           参数说明: 无
+    195           函数返回: 无
+    196           ---------------------------------------------------------------------*/
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    197          void B_LUX_Multiple_read(void)
+   \                     B_LUX_Multiple_read:
+    198          {   
+   \   000000   74F6         MOV     A,#-0xa
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 10
+   \   000005                ; Auto size: 0
+    199            uint8 i;	
+    200            B_LUX_Start();                          //起始信号
+   \   000005                ; Setup parameters for call to function B_LUX_Start
+   \   000005   12....       LCALL   ??B_LUX_Start?relay
+    201            B_LUX_SendByte(B_LUX_SlaveAddress+1);         //发送设备地址+读信号
+   \   000008                ; Setup parameters for call to function B_LUX_SendByte
+   \   000008   7947         MOV     R1,#0x47
+   \   00000A   12....       LCALL   ??B_LUX_SendByte?relay
+    202            
+    203            for (i=0; i<3; i++)                        //连续读取6个地址数据，存储中BUF
+   \   00000D   7E00         MOV     R6,#0x0
+   \   00000F   8006         SJMP    ??B_LUX_Multiple_read_0
+    204            {
+    205              BUF_0[i] = B_LUX_RecvByte();          //BUF[0]存储0x32地址中的数据
+    206              if (i == 3)
+    207              {
+    208                
+    209                B_LUX_SendACK(1);                   //最后一个数据需要回NOACK
+    210              }
+    211              else
+    212              {		
+    213                B_LUX_SendACK(0);                   //回应ACK
+   \                     ??B_LUX_Multiple_read_1:
+   \   000011                ; Setup parameters for call to function B_LUX_SendACK
+   \   000011   7900         MOV     R1,#0x0
+   \                     ??B_LUX_Multiple_read_2:
+   \   000013   12....       LCALL   ??B_LUX_SendACK?relay
+    214              }
+   \   000016   0E           INC     R6
+   \                     ??B_LUX_Multiple_read_0:
+   \   000017   EE           MOV     A,R6
+   \   000018   C3           CLR     C
+   \   000019   9403         SUBB    A,#0x3
+   \   00001B   5020         JNC     ??B_LUX_Multiple_read_3
+   \   00001D                ; Setup parameters for call to function B_LUX_RecvByte
+   \   00001D   12....       LCALL   ??B_LUX_RecvByte?relay
+   \   000020   E9           MOV     A,R1
+   \   000021   C0E0         PUSH    A
+   \   000023   8E..         MOV     ?V0 + 0,R6
+   \   000025   74..         MOV     A,#BUF_0 & 0xff
+   \   000027   25..         ADD     A,?V0 + 0
+   \   000029   F582         MOV     DPL,A
+   \   00002B   74..         MOV     A,#(BUF_0 >> 8) & 0xff
+   \   00002D   3400         ADDC    A,#0x0
+   \   00002F   F583         MOV     DPH,A
+   \   000031   D0E0         POP     A
+   \   000033   F0           MOVX    @DPTR,A
+   \   000034   7403         MOV     A,#0x3
+   \   000036   6E           XRL     A,R6
+   \   000037   70D8         JNZ     ??B_LUX_Multiple_read_1
+   \   000039                ; Setup parameters for call to function B_LUX_SendACK
+   \   000039   7901         MOV     R1,#0x1
+   \   00003B   80D6         SJMP    ??B_LUX_Multiple_read_2
+    215            }
+    216            
+    217            B_LUX_Stop();                           //停止信号
+   \                     ??B_LUX_Multiple_read_3:
+   \   00003D                ; Setup parameters for call to function B_LUX_Stop
+   \   00003D   12....       LCALL   ??B_LUX_Stop?relay
+    218            B_LUX_Delay5ms();
+   \   000040                ; Setup parameters for call to function B_LUX_Delay5ms
+   \   000040   12....       LCALL   ??B_LUX_Delay5ms?relay
+    219          }
+   \   000043   7F02         MOV     R7,#0x2
+   \   000045   02....       LJMP    ?BANKED_LEAVE_XDATA
+    220          
+    221          /*---------------------------------------------------------------------
+    222           功能描述: 初始化光照传感器
+    223           参数说明: 无
+    224           函数返回: 无
+    225           ---------------------------------------------------------------------*/
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    226          void B_LUX_Init()
+   \                     B_LUX_Init:
+    227          {
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+    228            
+    229            P1SEL &= ~(0x48);
+   \   000004   53F4B7       ANL     0xf4,#0xb7
+    230            
+    231            B_LUX_SCL0_O;
+   \   000007   43FD01       ORL     0xfd,#0x1
+    232            B_LUX_SDA0_O;
+   \   00000A   43FD40       ORL     0xfd,#0x40
+    233            
+    234            B_LUX_delay_nms(100);	    //延时100ms
+   \   00000D                ; Setup parameters for call to function B_LUX_delay_nms
+   \   00000D   7A64         MOV     R2,#0x64
+   \   00000F   7B00         MOV     R3,#0x0
+   \   000011   12....       LCALL   ??B_LUX_delay_nms?relay
+    235            
+    236            B_LUX_Single_Write(0x01); 
+   \   000014                ; Setup parameters for call to function B_LUX_Single_Write
+   \   000014   7901         MOV     R1,#0x1
+   \   000016   12....       LCALL   ??B_LUX_Single_Write?relay
+    237            
+    238          }
+   \   000019   D083         POP     DPH
+   \   00001B   D082         POP     DPL
+   \   00001D   02....       LJMP    ?BRET
+   \   000020                REQUIRE P1SEL
+   \   000020                REQUIRE P0DIR
+    239          
+    240          /*---------------------------------------------------------------------
+    241           功能描述: 光照读取函数
+    242           参数说明: 无
+    243           函数返回: 返回光照值
+    244           ---------------------------------------------------------------------*/
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    245          uint32 B_LUX_GetLux()
+   \                     B_LUX_GetLux:
+    246          {  
+   \   000000   74F0         MOV     A,#-0x10
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 16
+   \   000005                ; Auto size: 0
+    247            fint32 temp;
+    248            B_LUX_Single_Write(0x01);   // power on
+   \   000005                ; Setup parameters for call to function B_LUX_Single_Write
+   \   000005   7901         MOV     R1,#0x1
+   \   000007   12....       LCALL   ??B_LUX_Single_Write?relay
+    249            B_LUX_Single_Write(0x10);   // H- resolution mode 
+   \   00000A                ; Setup parameters for call to function B_LUX_Single_Write
+   \   00000A   7910         MOV     R1,#0x10
+   \   00000C   12....       LCALL   ??B_LUX_Single_Write?relay
+    250            
+    251            B_LUX_delay_nms(180);       //延时180ms
+   \   00000F                ; Setup parameters for call to function B_LUX_delay_nms
+   \   00000F   7AB4         MOV     R2,#-0x4c
+   \   000011   7B00         MOV     R3,#0x0
+   \   000013   12....       LCALL   ??B_LUX_delay_nms?relay
+    252            
+    253            B_LUX_Multiple_read();      //连续读出数据，存储在BUF中
+   \   000016                ; Setup parameters for call to function B_LUX_Multiple_read
+   \   000016   12....       LCALL   ??B_LUX_Multiple_read?relay
+    254            
+    255            B_LUX_Single_Write(0x00);   // power off
+   \   000019                ; Setup parameters for call to function B_LUX_Single_Write
+   \   000019   7900         MOV     R1,#0x0
+   \   00001B   12....       LCALL   ??B_LUX_Single_Write?relay
+    256            
+    257            dis_data_0=BUF_0[0];
+    258            dis_data_0=(dis_data_0<<8)+BUF_0[1];//合成数据，即光照数据
+   \   00001E   90....       MOV     DPTR,#BUF_0
+   \   000021   E0           MOVX    A,@DPTR
+   \   000022   F9           MOV     R1,A
+   \   000023   A3           INC     DPTR
+   \   000024   E0           MOVX    A,@DPTR
+   \   000025   90....       MOV     DPTR,#dis_data_0
+   \   000028   F0           MOVX    @DPTR,A
+   \   000029   A3           INC     DPTR
+   \   00002A   E9           MOV     A,R1
+   \   00002B   F0           MOVX    @DPTR,A
+    259            
+    260            temp=(float)dis_data_0/1.2;
+    261            return (uint32)(temp*1.4);
+   \   00002C   90....       MOV     DPTR,#dis_data_0
+   \   00002F   E0           MOVX    A,@DPTR
+   \   000030   F5..         MOV     ?V0 + 0,A
+   \   000032   A3           INC     DPTR
+   \   000033   E0           MOVX    A,@DPTR
+   \   000034   F5..         MOV     ?V0 + 1,A
+   \   000036   E4           CLR     A
+   \   000037   F5..         MOV     ?V0 + 2,A
+   \   000039   F5..         MOV     ?V0 + 3,A
+   \   00003B   78..         MOV     R0,#?V0 + 0
+   \   00003D   12....       LCALL   ?UL_TO_FLT
+   \   000040   90....       MOV     DPTR,#__Constant_3f99999a
+   \   000043   78..         MOV     R0,#?V0 + 4
+   \   000045   12....       LCALL   ?L_MOV_X
+   \   000048   78..         MOV     R0,#?V0 + 0
+   \   00004A   79..         MOV     R1,#?V0 + 4
+   \   00004C   12....       LCALL   ?FLT_DIV
+   \   00004F   90....       MOV     DPTR,#__Constant_3fb33333
+   \   000052   78..         MOV     R0,#?V0 + 4
+   \   000054   12....       LCALL   ?L_MOV_X
+   \   000057   78..         MOV     R0,#?V0 + 0
+   \   000059   79..         MOV     R1,#?V0 + 4
+   \   00005B   12....       LCALL   ?FLT_MUL
+   \   00005E   78..         MOV     R0,#?V0 + 0
+   \   000060   12....       LCALL   ?FLT_TO_UL
+   \   000063   AA..         MOV     R2,?V0 + 0
+   \   000065   AB..         MOV     R3,?V0 + 1
+   \   000067   AC..         MOV     R4,?V0 + 2
+   \   000069   AD..         MOV     R5,?V0 + 3
+   \   00006B   7F08         MOV     R7,#0x8
+   \   00006D   02....       LJMP    ?BANKED_LEAVE_XDATA
+    262          } 
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     __Constant_3f99999a:
+   \   000000   9A99993F     DD 3F99999AH
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     __Constant_3fb33333:
+   \   000000   3333B33F     DD 3FB33333H
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??B_LUX_delay_nms?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    B_LUX_delay_nms
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??B_LUX_Delay5us?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    B_LUX_Delay5us
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??B_LUX_Delay5ms?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    B_LUX_Delay5ms
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??B_LUX_Start?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    B_LUX_Start
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??B_LUX_Stop?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    B_LUX_Stop
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??B_LUX_SendACK?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    B_LUX_SendACK
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??B_LUX_RecvACK?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    B_LUX_RecvACK
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??B_LUX_SendByte?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    B_LUX_SendByte
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??B_LUX_RecvByte?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    B_LUX_RecvByte
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??B_LUX_Single_Write?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    B_LUX_Single_Write
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??B_LUX_Multiple_read?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    B_LUX_Multiple_read
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??B_LUX_Init?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    B_LUX_Init
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??B_LUX_GetLux?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    B_LUX_GetLux
+    263          
+
+   Maximum stack usage in bytes:
+
+     Function                 ISTACK PSTACK XSTACK
+     --------                 ------ ------ ------
+     B_LUX_Delay5ms               0      0     10
+     B_LUX_Delay5us               0      0      9
+     B_LUX_GetLux                 0      0     16
+       -> B_LUX_Single_Write      0      0     32
+       -> B_LUX_Single_Write      0      0     32
+       -> B_LUX_delay_nms         0      0     32
+       -> B_LUX_Multiple_read     0      0     32
+       -> B_LUX_Single_Write      0      0     32
+     B_LUX_Init                   2      0      0
+       -> B_LUX_delay_nms         4      0      0
+       -> B_LUX_Single_Write      4      0      0
+     B_LUX_Multiple_read          1      0     26
+       -> B_LUX_Start             0      0     20
+       -> B_LUX_SendByte          0      0     20
+       -> B_LUX_SendACK           0      0     20
+       -> B_LUX_RecvByte          0      0     20
+       -> B_LUX_SendACK           0      0     20
+       -> B_LUX_Stop              0      0     20
+       -> B_LUX_Delay5ms          0      0     20
+     B_LUX_RecvACK                0      0     18
+       -> B_LUX_Delay5us          0      0     18
+       -> B_LUX_Delay5us          0      0     18
+     B_LUX_RecvByte               0      0     19
+       -> B_LUX_Delay5us          0      0     18
+       -> B_LUX_Delay5us          0      0     18
+     B_LUX_SendACK                0      0     19
+       -> B_LUX_Delay5us          0      0     18
+       -> B_LUX_Delay5us          0      0     18
+     B_LUX_SendByte               0      0     19
+       -> B_LUX_Delay5us          0      0     18
+       -> B_LUX_Delay5us          0      0     18
+       -> B_LUX_Delay5us          0      0     18
+       -> B_LUX_RecvACK           0      0     18
+     B_LUX_Single_Write           0      0     25
+       -> B_LUX_Start             0      0     18
+       -> B_LUX_SendByte          0      0     18
+       -> B_LUX_SendByte          0      0     18
+       -> B_LUX_Stop              0      0     18
+     B_LUX_Start                  2      0     10
+       -> B_LUX_Delay5us          4      0      0
+       -> B_LUX_Delay5us          4      0      0
+     B_LUX_Stop                   2      0     10
+       -> B_LUX_Delay5us          4      0      0
+       -> B_LUX_Delay5us          4      0      0
+       -> B_LUX_Delay5us          4      0      0
+     B_LUX_delay_nms              0      0     16
+
+
+   Segment part sizes:
+
+     Function/Label              Bytes
+     --------------              -----
+     _A_P0                          1
+     P1SEL                          1
+     P0DIR                          1
+     P1DIR                          1
+     BUF_0                          8
+     dis_data_0                     2
+     B_LUX_delay_nms               47
+     B_LUX_Delay5us                14
+     B_LUX_Delay5ms                23
+     B_LUX_Start                   25
+     B_LUX_Stop                    28
+     B_LUX_SendACK                 33
+     B_LUX_RecvACK                 35
+     B_LUX_SendByte                54
+     B_LUX_RecvByte                56
+     B_LUX_Single_Write            28
+     B_LUX_Multiple_read           72
+     B_LUX_Init                    32
+     B_LUX_GetLux                 112
+     __Constant_3f99999a            4
+     __Constant_3fb33333            4
+     ??B_LUX_delay_nms?relay        6
+     ??B_LUX_Delay5us?relay         6
+     ??B_LUX_Delay5ms?relay         6
+     ??B_LUX_Start?relay            6
+     ??B_LUX_Stop?relay             6
+     ??B_LUX_SendACK?relay          6
+     ??B_LUX_RecvACK?relay          6
+     ??B_LUX_SendByte?relay         6
+     ??B_LUX_RecvByte?relay         6
+     ??B_LUX_Single_Write?relay     6
+     ??B_LUX_Multiple_read?relay    6
+     ??B_LUX_Init?relay             6
+     ??B_LUX_GetLux?relay           6
+
+ 
+ 559 bytes in segment BANKED_CODE
+  78 bytes in segment BANK_RELAYS
+   4 bytes in segment SFR_AN
+   8 bytes in segment XDATA_ROM_C
+  10 bytes in segment XDATA_Z
+ 
+ 637 bytes of CODE  memory
+   0 bytes of CONST memory (+ 8 bytes shared)
+   0 bytes of DATA  memory (+ 4 bytes shared)
+  10 bytes of XDATA memory
+
+Errors: none
+Warnings: none

@@ -1,0 +1,1706 @@
+///////////////////////////////////////////////////////////////////////////////
+//                                                                            /
+// IAR C/C++ Compiler V8.10.3.10338/W32 for 8051        12/Oct/2016  15:54:23 /
+// Copyright 2004-2011 IAR Systems AB.                                        /
+//                                                                            /
+//    Core               =  plain                                             /
+//    Code model         =  banked                                            /
+//    Data model         =  large                                             /
+//    Calling convention =  xdata reentrant                                   /
+//    Constant location  =  data_rom                                          /
+//    Dptr setup         =  1,16                                              /
+//    Source file        =  G:\研究生\2016 电赛  决赛\8.11\Projects\zstack\Ut /
+//                          ilities\SerialApp\Source\B_LUX_V20.c              /
+//    Command line       =  -f "G:\研究生\2016 电赛                           /
+//                          决赛\8.11\Projects\zstack\Utilities\SerialApp\CC2 /
+//                          530DB\..\..\..\Tools\CC2530DB\f8wEndev.cfg"       /
+//                          (-DCPU32MHZ -DROOT=__near_func -DBLINK_LEDS) -f   /
+//                          "G:\研究生\2016 电赛  决赛\8.11\Projects\zstack\U /
+//                          tilities\SerialApp\CC2530DB\..\..\..\Tools\CC2530 /
+//                          DB\f8wConfig.cfg" (-DSECURE=0                     /
+//                          -DZG_SECURE_DYNAMIC=0 -DREFLECTOR                 /
+//                          -DDEFAULT_CHANLIST=0x00000800                     /
+//                          -DZDAPP_CONFIG_PAN_ID=0xFFF1                      /
+//                          -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_M /
+//                          ASK=0x007F -DBEACON_REQUEST_DELAY=100             /
+//                          -DBEACON_REQ_DELAY_MASK=0x00FF                    /
+//                          -DROUTE_EXPIRY_TIME=30 -DAPSC_ACK_WAIT_DURATION_P /
+//                          OLLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=7           /
+//                          -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3   /
+//                          -DNWK_MAX_DATA_RETRIES=2                          /
+//                          -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9        /
+//                          -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=40          /
+//                          -DNWK_MAX_BINDING_ENTRIES=4                       /
+//                          -DMAX_BINDING_CLUSTER_IDS=4                       /
+//                          "-DDEFAULT_KEY={0x01, 0x03, 0x05, 0x07, 0x09,     /
+//                          0x0B, 0x0D, 0x0F, 0x00, 0x02, 0x04, 0x06, 0x08,   /
+//                          0x0A, 0x0C, 0x0D}" -DMAC_MAX_FRAME_SIZE=116       /
+//                          "-DCONST=const __code" -DGENERIC=__generic        /
+//                          -DRFD_RCVC_ALWAYS_ON=FALSE -DPOLL_RATE=1000       /
+//                          -DQUEUED_POLL_RATE=100 -DRESPONSE_POLL_RATE=100)  /
+//                          -DREJOIN_POLL_RATE=440 "G:\研究生\2016 电赛       /
+//                          决赛\8.11\Projects\zstack\Utilities\SerialApp\Sou /
+//                          rce\B_LUX_V20.c" -D ZIGBEEPRO -D NWK_AUTO_POLL    /
+//                          -D HAL_UART=TRUE -D SERIAL_APP_PORT=0 -D          /
+//                          LCD_SUPPORTED -D xPOWER_SAVING -lC                /
+//                          "G:\研究生\2016 电赛  决赛\8.11\Projects\zstack\U /
+//                          tilities\SerialApp\CC2530DB\EndDeviceEB-Pro\List\ /
+//                          " -lA "G:\研究生\2016 电赛                        /
+//                          决赛\8.11\Projects\zstack\Utilities\SerialApp\CC2 /
+//                          530DB\EndDeviceEB-Pro\List\" --diag_suppress      /
+//                          Pe001,Pa010 -o "G:\研究生\2016 电赛               /
+//                          决赛\8.11\Projects\zstack\Utilities\SerialApp\CC2 /
+//                          530DB\EndDeviceEB-Pro\Obj\" -e --no_unroll        /
+//                          --no_inline --no_tbaa --debug --core=plain        /
+//                          --dptr=16,1 --data_model=large                    /
+//                          --code_model=banked --calling_convention=xdata_re /
+//                          entrant --place_constants=data_rom                /
+//                          --nr_virtual_regs 8 -I "G:\研究生\2016 电赛       /
+//                          决赛\8.11\Projects\zstack\Utilities\SerialApp\CC2 /
+//                          530DB\" -I "G:\研究生\2016 电赛                   /
+//                          决赛\8.11\Projects\zstack\Utilities\SerialApp\CC2 /
+//                          530DB\..\SOURCE\" -I "G:\研究生\2016 电赛         /
+//                          决赛\8.11\Projects\zstack\Utilities\SerialApp\CC2 /
+//                          530DB\..\..\..\ZMAIN\TI2530DB\" -I                /
+//                          "G:\研究生\2016 电赛  决赛\8.11\Projects\zstack\U /
+//                          tilities\SerialApp\CC2530DB\..\..\..\..\..\COMPON /
+//                          ENTS\MT\" -I "G:\研究生\2016 电赛                 /
+//                          决赛\8.11\Projects\zstack\Utilities\SerialApp\CC2 /
+//                          530DB\..\..\..\..\..\COMPONENTS\HAL\INCLUDE\" -I  /
+//                          "G:\研究生\2016 电赛  决赛\8.11\Projects\zstack\U /
+//                          tilities\SerialApp\CC2530DB\..\..\..\..\..\COMPON /
+//                          ENTS\HAL\TARGET\CC2530EB\" -I "G:\研究生\2016     /
+//                          电赛  决赛\8.11\Projects\zstack\Utilities\SerialA /
+//                          pp\CC2530DB\..\..\..\..\..\COMPONENTS\OSAL\MCU\CC /
+//                          SOC\" -I "G:\研究生\2016 电赛                     /
+//                          决赛\8.11\Projects\zstack\Utilities\SerialApp\CC2 /
+//                          530DB\..\..\..\..\..\COMPONENTS\OSAL\INCLUDE\"    /
+//                          -I "G:\研究生\2016 电赛                           /
+//                          决赛\8.11\Projects\zstack\Utilities\SerialApp\CC2 /
+//                          530DB\..\..\..\..\..\COMPONENTS\STACK\AF\" -I     /
+//                          "G:\研究生\2016 电赛  决赛\8.11\Projects\zstack\U /
+//                          tilities\SerialApp\CC2530DB\..\..\..\..\..\COMPON /
+//                          ENTS\STACK\NWK\" -I "G:\研究生\2016 电赛          /
+//                          决赛\8.11\Projects\zstack\Utilities\SerialApp\CC2 /
+//                          530DB\..\..\..\..\..\COMPONENTS\STACK\SEC\" -I    /
+//                          "G:\研究生\2016 电赛  决赛\8.11\Projects\zstack\U /
+//                          tilities\SerialApp\CC2530DB\..\..\..\..\..\COMPON /
+//                          ENTS\STACK\SAPI\" -I "G:\研究生\2016 电赛         /
+//                          决赛\8.11\Projects\zstack\Utilities\SerialApp\CC2 /
+//                          530DB\..\..\..\..\..\COMPONENTS\STACK\SYS\" -I    /
+//                          "G:\研究生\2016 电赛  决赛\8.11\Projects\zstack\U /
+//                          tilities\SerialApp\CC2530DB\..\..\..\..\..\COMPON /
+//                          ENTS\STACK\ZDO\" -I "G:\研究生\2016 电赛          /
+//                          决赛\8.11\Projects\zstack\Utilities\SerialApp\CC2 /
+//                          530DB\..\..\..\..\..\COMPONENTS\ZMAC\F8W\" -I     /
+//                          "G:\研究生\2016 电赛  决赛\8.11\Projects\zstack\U /
+//                          tilities\SerialApp\CC2530DB\..\..\..\..\..\COMPON /
+//                          ENTS\ZMAC\" -I "G:\研究生\2016 电赛               /
+//                          决赛\8.11\Projects\zstack\Utilities\SerialApp\CC2 /
+//                          530DB\..\..\..\..\..\COMPONENTS\SERVICES\SADDR\"  /
+//                          -I "G:\研究生\2016 电赛                           /
+//                          决赛\8.11\Projects\zstack\Utilities\SerialApp\CC2 /
+//                          530DB\..\..\..\..\..\COMPONENTS\SERVICES\SDATA\"  /
+//                          -I "G:\研究生\2016 电赛                           /
+//                          决赛\8.11\Projects\zstack\Utilities\SerialApp\CC2 /
+//                          530DB\..\..\..\..\..\COMPONENTS\MAC\INCLUDE\" -I  /
+//                          "G:\研究生\2016 电赛  决赛\8.11\Projects\zstack\U /
+//                          tilities\SerialApp\CC2530DB\..\..\..\..\..\COMPON /
+//                          ENTS\MAC\HIGH_LEVEL\" -I "G:\研究生\2016 电赛     /
+//                          决赛\8.11\Projects\zstack\Utilities\SerialApp\CC2 /
+//                          530DB\..\..\..\..\..\COMPONENTS\MAC\LOW_LEVEL\srf /
+//                          04\" -I "G:\研究生\2016 电赛                      /
+//                          决赛\8.11\Projects\zstack\Utilities\SerialApp\CC2 /
+//                          530DB\..\..\..\..\..\COMPONENTS\MAC\LOW_LEVEL\srf /
+//                          04\SINGLE_CHIP\" -Om --require_prototypes         /
+//    List file          =  G:\研究生\2016 电赛  决赛\8.11\Projects\zstack\Ut /
+//                          ilities\SerialApp\CC2530DB\EndDeviceEB-Pro\List\B /
+//                          _LUX_V20.s51                                      /
+//                                                                            /
+//                                                                            /
+///////////////////////////////////////////////////////////////////////////////
+
+        NAME B_LUX_V20
+
+        RTMODEL "__SystemLibrary", "CLib"
+        RTMODEL "__calling_convention", "xdata_reentrant"
+        RTMODEL "__code_model", "banked"
+        RTMODEL "__core", "plain"
+        RTMODEL "__data_model", "large"
+        RTMODEL "__dptr_size", "16"
+        RTMODEL "__extended_stack", "disabled"
+        RTMODEL "__location_for_constants", "data"
+        RTMODEL "__number_of_dptrs", "1"
+        RTMODEL "__rt_version", "1"
+
+        RSEG DOVERLAY:DATA:NOROOT(0)
+        RSEG IOVERLAY:IDATA:NOROOT(0)
+        RSEG ISTACK:IDATA:NOROOT(0)
+        RSEG PSTACK:XDATA:NOROOT(0)
+        RSEG XSTACK:XDATA:NOROOT(0)
+
+        EXTERN ?BANKED_ENTER_XDATA
+        EXTERN ?BANKED_LEAVE_XDATA
+        EXTERN ?BDISPATCH
+        EXTERN ?BRET
+        EXTERN ?FLT_DIV
+        EXTERN ?FLT_MUL
+        EXTERN ?FLT_TO_UL
+        EXTERN ?L_MOV_X
+        EXTERN ?UL_TO_FLT
+        EXTERN ?V0
+        EXTERN __INIT_XDATA_Z
+
+        PUBLIC ??B_LUX_Delay5ms?relay
+        FUNCTION ??B_LUX_Delay5ms?relay,0203H
+        PUBLIC ??B_LUX_Delay5us?relay
+        FUNCTION ??B_LUX_Delay5us?relay,0203H
+        PUBLIC ??B_LUX_GetLux?relay
+        FUNCTION ??B_LUX_GetLux?relay,0203H
+        PUBLIC ??B_LUX_Init?relay
+        FUNCTION ??B_LUX_Init?relay,0203H
+        PUBLIC ??B_LUX_Multiple_read?relay
+        FUNCTION ??B_LUX_Multiple_read?relay,0203H
+        PUBLIC ??B_LUX_RecvACK?relay
+        FUNCTION ??B_LUX_RecvACK?relay,0203H
+        PUBLIC ??B_LUX_RecvByte?relay
+        FUNCTION ??B_LUX_RecvByte?relay,0203H
+        PUBLIC ??B_LUX_SendACK?relay
+        FUNCTION ??B_LUX_SendACK?relay,0203H
+        PUBLIC ??B_LUX_SendByte?relay
+        FUNCTION ??B_LUX_SendByte?relay,0203H
+        PUBLIC ??B_LUX_Single_Write?relay
+        FUNCTION ??B_LUX_Single_Write?relay,0203H
+        PUBLIC ??B_LUX_Start?relay
+        FUNCTION ??B_LUX_Start?relay,0203H
+        PUBLIC ??B_LUX_Stop?relay
+        FUNCTION ??B_LUX_Stop?relay,0203H
+        PUBLIC ??B_LUX_delay_nms?relay
+        FUNCTION ??B_LUX_delay_nms?relay,0203H
+        PUBLIC BUF_0
+        PUBLIC B_LUX_Delay5ms
+        FUNCTION B_LUX_Delay5ms,0203H
+        ARGFRAME XSTACK, 10, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        PUBLIC B_LUX_Delay5us
+        FUNCTION B_LUX_Delay5us,0203H
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        PUBLIC B_LUX_GetLux
+        FUNCTION B_LUX_GetLux,021203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME XSTACK, 16, STACK
+        PUBLIC B_LUX_Init
+        FUNCTION B_LUX_Init,021203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME ISTACK, 2, STACK
+        PUBLIC B_LUX_Multiple_read
+        FUNCTION B_LUX_Multiple_read,021203H
+        ARGFRAME XSTACK, 16, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        LOCFRAME ISTACK, 1, STACK
+        LOCFRAME XSTACK, 10, STACK
+        PUBLIC B_LUX_RecvACK
+        FUNCTION B_LUX_RecvACK,021203H
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        LOCFRAME XSTACK, 9, STACK
+        PUBLIC B_LUX_RecvByte
+        FUNCTION B_LUX_RecvByte,021203H
+        ARGFRAME XSTACK, 10, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        LOCFRAME XSTACK, 9, STACK
+        PUBLIC B_LUX_SendACK
+        FUNCTION B_LUX_SendACK,021203H
+        ARGFRAME XSTACK, 10, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        LOCFRAME XSTACK, 9, STACK
+        PUBLIC B_LUX_SendByte
+        FUNCTION B_LUX_SendByte,021203H
+        ARGFRAME XSTACK, 10, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        LOCFRAME XSTACK, 9, STACK
+        PUBLIC B_LUX_Single_Write
+        FUNCTION B_LUX_Single_Write,021203H
+        ARGFRAME XSTACK, 16, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        LOCFRAME XSTACK, 9, STACK
+        PUBLIC B_LUX_Start
+        FUNCTION B_LUX_Start,021203H
+        ARGFRAME XSTACK, 10, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        LOCFRAME ISTACK, 2, STACK
+        PUBLIC B_LUX_Stop
+        FUNCTION B_LUX_Stop,021203H
+        ARGFRAME XSTACK, 10, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        LOCFRAME ISTACK, 2, STACK
+        PUBLIC B_LUX_delay_nms
+        FUNCTION B_LUX_delay_nms,0203H
+        ARGFRAME XSTACK, 16, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        PUBWEAK P0DIR
+        PUBWEAK P1DIR
+        PUBWEAK P1SEL
+        PUBWEAK _A_P0
+        PUBWEAK __Constant_3f99999a
+        PUBWEAK __Constant_3fb33333
+        PUBLIC dis_data_0
+        
+        CFI Names cfiNames0
+        CFI StackFrame CFA_SP SP IDATA
+        CFI StackFrame CFA_PSP16 PSP16 XDATA
+        CFI StackFrame CFA_XSP16 XSP16 XDATA
+        CFI StaticOverlayFrame CFA_IOVERLAY IOVERLAY
+        CFI StaticOverlayFrame CFA_DOVERLAY DOVERLAY
+        CFI Resource `PSW.CY`:1, `B.BR0`:1, `B.BR1`:1, `B.BR2`:1, `B.BR3`:1
+        CFI Resource `B.BR4`:1, `B.BR5`:1, `B.BR6`:1, `B.BR7`:1, `VB.BR8`:1
+        CFI Resource `VB.BR9`:1, `VB.BR10`:1, `VB.BR11`:1, `VB.BR12`:1
+        CFI Resource `VB.BR13`:1, `VB.BR14`:1, `VB.BR15`:1, VB:8, B:8, A:8
+        CFI Resource PSW:8, DPL0:8, DPH0:8, R0:8, R1:8, R2:8, R3:8, R4:8, R5:8
+        CFI Resource R6:8, R7:8, V0:8, V1:8, V2:8, V3:8, V4:8, V5:8, V6:8, V7:8
+        CFI Resource SP:8, PSPH:8, PSPL:8, PSP16:16, XSPH:8, XSPL:8, XSP16:16
+        CFI VirtualResource ?RET:24
+        CFI Resource ?BRET_EXT:8
+        CFI VirtualResource ?RET_HIGH:8, ?RET_LOW:8
+        CFI ResourceParts PSP16 PSPH, PSPL
+        CFI ResourceParts XSP16 XSPH, XSPL
+        CFI ResourceParts ?RET ?BRET_EXT, ?RET_HIGH, ?RET_LOW
+        CFI EndNames cfiNames0
+        
+        CFI Common cfiCommon0 Using cfiNames0
+        CFI CodeAlign 1
+        CFI DataAlign -1
+        CFI ReturnAddress ?RET CODE
+        CFI CFA_DOVERLAY Used
+        CFI CFA_IOVERLAY Used
+        CFI CFA_SP SP+-3
+        CFI CFA_PSP16 PSP16+0
+        CFI CFA_XSP16 XSP16+0
+        CFI `PSW.CY` SameValue
+        CFI `B.BR0` SameValue
+        CFI `B.BR1` SameValue
+        CFI `B.BR2` SameValue
+        CFI `B.BR3` SameValue
+        CFI `B.BR4` SameValue
+        CFI `B.BR5` SameValue
+        CFI `B.BR6` SameValue
+        CFI `B.BR7` SameValue
+        CFI `VB.BR8` SameValue
+        CFI `VB.BR9` SameValue
+        CFI `VB.BR10` SameValue
+        CFI `VB.BR11` SameValue
+        CFI `VB.BR12` SameValue
+        CFI `VB.BR13` SameValue
+        CFI `VB.BR14` SameValue
+        CFI `VB.BR15` SameValue
+        CFI VB SameValue
+        CFI B Undefined
+        CFI A Undefined
+        CFI PSW SameValue
+        CFI DPL0 SameValue
+        CFI DPH0 SameValue
+        CFI R0 Undefined
+        CFI R1 Undefined
+        CFI R2 Undefined
+        CFI R3 Undefined
+        CFI R4 Undefined
+        CFI R5 Undefined
+        CFI R6 SameValue
+        CFI R7 SameValue
+        CFI V0 SameValue
+        CFI V1 SameValue
+        CFI V2 SameValue
+        CFI V3 SameValue
+        CFI V4 SameValue
+        CFI V5 SameValue
+        CFI V6 SameValue
+        CFI V7 SameValue
+        CFI PSPH Undefined
+        CFI PSPL Undefined
+        CFI XSPH Undefined
+        CFI XSPL Undefined
+        CFI ?RET Concat
+        CFI ?BRET_EXT Frame(CFA_SP, 3)
+        CFI ?RET_HIGH Frame(CFA_SP, 2)
+        CFI ?RET_LOW Frame(CFA_SP, 1)
+        CFI EndCommon cfiCommon0
+        
+B_LUX_Delay5ms      SYMBOL "B_LUX_Delay5ms"
+??B_LUX_Delay5ms?relay SYMBOL "?relay", B_LUX_Delay5ms
+B_LUX_Delay5us      SYMBOL "B_LUX_Delay5us"
+??B_LUX_Delay5us?relay SYMBOL "?relay", B_LUX_Delay5us
+B_LUX_GetLux        SYMBOL "B_LUX_GetLux"
+??B_LUX_GetLux?relay SYMBOL "?relay", B_LUX_GetLux
+B_LUX_Init          SYMBOL "B_LUX_Init"
+??B_LUX_Init?relay  SYMBOL "?relay", B_LUX_Init
+B_LUX_Multiple_read SYMBOL "B_LUX_Multiple_read"
+??B_LUX_Multiple_read?relay SYMBOL "?relay", B_LUX_Multiple_read
+B_LUX_RecvACK       SYMBOL "B_LUX_RecvACK"
+??B_LUX_RecvACK?relay SYMBOL "?relay", B_LUX_RecvACK
+B_LUX_RecvByte      SYMBOL "B_LUX_RecvByte"
+??B_LUX_RecvByte?relay SYMBOL "?relay", B_LUX_RecvByte
+B_LUX_SendACK       SYMBOL "B_LUX_SendACK"
+??B_LUX_SendACK?relay SYMBOL "?relay", B_LUX_SendACK
+B_LUX_SendByte      SYMBOL "B_LUX_SendByte"
+??B_LUX_SendByte?relay SYMBOL "?relay", B_LUX_SendByte
+B_LUX_Single_Write  SYMBOL "B_LUX_Single_Write"
+??B_LUX_Single_Write?relay SYMBOL "?relay", B_LUX_Single_Write
+B_LUX_Start         SYMBOL "B_LUX_Start"
+??B_LUX_Start?relay SYMBOL "?relay", B_LUX_Start
+B_LUX_Stop          SYMBOL "B_LUX_Stop"
+??B_LUX_Stop?relay  SYMBOL "?relay", B_LUX_Stop
+B_LUX_delay_nms     SYMBOL "B_LUX_delay_nms"
+??B_LUX_delay_nms?relay SYMBOL "?relay", B_LUX_delay_nms
+
+// G:\研究生\2016 电赛  决赛\8.11\Projects\zstack\Utilities\SerialApp\Source\B_LUX_V20.c
+//    1 //***************************************
+//    2 // B_LUX_V20采集程序
+//    3 //****************************************
+//    4 #include  <math.h>    //Keil library  
+//    5 #include  <stdio.h>   //Keil library
+//    6 #include "B_LUX_V20.h"
+
+        ASEGN SFR_AN:DATA:NOROOT,080H
+// union <unnamed> volatile __sfr _A_P0
+_A_P0:
+        DATA8
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0f4H
+// unsigned char volatile __sfr P1SEL
+P1SEL:
+        DATA8
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0fdH
+// unsigned char volatile __sfr P0DIR
+P0DIR:
+        DATA8
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0feH
+// unsigned char volatile __sfr P1DIR
+P1DIR:
+        DATA8
+        DS 1
+//    7 
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        DATA8
+//    8 uint8    BUF_0[8];                       //接收数据缓存区      	
+BUF_0:
+        DS 8
+        REQUIRE __INIT_XDATA_Z
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        DATA16
+//    9 uint16   dis_data_0;                     //变量
+dis_data_0:
+        DS 2
+        REQUIRE __INIT_XDATA_Z
+//   10 
+//   11 /*---------------------------------------------------------------------
+//   12  功能描述: 延时纳秒 不同的工作环境,需要调整此函数
+//   13  参数说明: 无	
+//   14  函数返回: 无
+//   15  ---------------------------------------------------------------------*/
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//   16 void B_LUX_delay_nms(uint16 k)	
+B_LUX_delay_nms:
+        CFI Block cfiBlock0 Using cfiCommon0
+        CFI Function B_LUX_delay_nms
+        CODE
+//   17 {						
+        ; Saved register size: 0
+        ; Auto size: 0
+//   18   uint16 i,j;				
+//   19   for(i=0;i<k;i++)
+        MOV     R4,#0x0
+        MOV     R5,#0x0
+        SJMP    ??B_LUX_delay_nms_0
+//   20   {			
+//   21     for(j=0;j<6000;j++)			
+??B_LUX_delay_nms_1:
+        MOV     A,R0
+        ADD     A,#0x1
+        INC     R0
+        MOV     A,R1
+        ADDC    A,#0x0
+        MOV     R1,A
+??B_LUX_delay_nms_2:
+        CLR     C
+        MOV     A,R0
+        SUBB    A,#0x70
+        MOV     A,R1
+        SUBB    A,#0x17
+        JC      ??B_LUX_delay_nms_1
+        MOV     A,R4
+        ADD     A,#0x1
+        INC     R4
+        MOV     A,R5
+        ADDC    A,#0x0
+        MOV     R5,A
+??B_LUX_delay_nms_0:
+        CLR     C
+        MOV     A,R4
+        SUBB    A,R2
+        MOV     A,R5
+        SUBB    A,R3
+        JNC     ??B_LUX_delay_nms_3
+        MOV     R0,#0x0
+        MOV     R1,#0x0
+        SJMP    ??B_LUX_delay_nms_2
+//   22     {
+//   23       ;
+//   24     }
+//   25   }						
+//   26 }					
+??B_LUX_delay_nms_3:
+        LJMP    ?BRET
+        CFI EndBlock cfiBlock0
+//   27 
+//   28 /*---------------------------------------------------------------------
+//   29  功能描述: 延时5微秒  不同的工作环境,需要调整此函数
+//   30  参数说明: 无	
+//   31  函数返回: 无
+//   32  ---------------------------------------------------------------------*/
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//   33 void B_LUX_Delay5us()
+B_LUX_Delay5us:
+        CFI Block cfiBlock1 Using cfiCommon0
+        CFI Function B_LUX_Delay5us
+        CODE
+//   34 {
+        ; Saved register size: 0
+        ; Auto size: 0
+//   35   uint8 n = 50;
+        MOV     R0,#0x32
+//   36   
+//   37   while (n--);
+??B_LUX_Delay5us_0:
+        MOV     A,R0
+        MOV     R1,A
+        MOV     A,#-0x1
+        ADD     A,R1
+        DEC     R0
+        INC     A
+        JNZ     ??B_LUX_Delay5us_0
+//   38 }
+        LJMP    ?BRET
+        CFI EndBlock cfiBlock1
+//   39 
+//   40 /*---------------------------------------------------------------------
+//   41  功能描述: 延时5毫秒  不同的工作环境,需要调整此函数
+//   42  参数说明: 无	
+//   43  函数返回: 无
+//   44  ---------------------------------------------------------------------*/
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//   45 void B_LUX_Delay5ms()
+B_LUX_Delay5ms:
+        CFI Block cfiBlock2 Using cfiCommon0
+        CFI Function B_LUX_Delay5ms
+        CODE
+//   46 {
+        ; Saved register size: 0
+        ; Auto size: 0
+//   47   uint16 n = 50000;
+        MOV     R0,#0x50
+        MOV     R1,#-0x3d
+//   48   
+//   49   while (n--);
+??B_LUX_Delay5ms_0:
+        MOV     A,R0
+        MOV     R2,A
+        MOV     A,R1
+        MOV     R3,A
+        MOV     A,R2
+        ADD     A,#-0x1
+        DEC     R0
+        MOV     A,R3
+        ADDC    A,#-0x1
+        MOV     R1,A
+        MOV     A,R2
+        ORL     A,R3
+        JNZ     ??B_LUX_Delay5ms_0
+//   50 }
+        LJMP    ?BRET
+        CFI EndBlock cfiBlock2
+//   51 
+//   52 /*---------------------------------------------------------------------
+//   53  功能描述: 起始信号
+//   54  参数说明: 无	
+//   55  函数返回: 无
+//   56  ---------------------------------------------------------------------*/
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//   57 void B_LUX_Start()
+B_LUX_Start:
+        CFI Block cfiBlock3 Using cfiCommon0
+        CFI Function B_LUX_Start
+        CODE
+//   58 {
+        FUNCALL B_LUX_Start, B_LUX_Delay5us
+        LOCFRAME ISTACK, 2, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 0, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 2, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 0, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL B_LUX_Start, B_LUX_Delay5us
+        LOCFRAME ISTACK, 2, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 0, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 2, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 0, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        PUSH    DPL
+        CFI DPL0 Frame(CFA_SP, 4)
+        CFI CFA_SP SP+-4
+        PUSH    DPH
+        CFI DPH0 Frame(CFA_SP, 5)
+        CFI CFA_SP SP+-5
+        ; Saved register size: 2
+        ; Auto size: 0
+//   59   B_LUX_SDA0_H;                    //拉高数据线
+        SETB    0x80.6
+//   60   B_LUX_SCL0_H;                    //拉高时钟线
+        SETB    0x80.0
+//   61   B_LUX_Delay5us();                 //延时
+        ; Setup parameters for call to function B_LUX_Delay5us
+        LCALL   ??B_LUX_Delay5us?relay
+//   62   B_LUX_SDA0_L;                    //产生下降沿
+        CLR     0x80.6
+//   63   B_LUX_Delay5us();                 //延时
+        ; Setup parameters for call to function B_LUX_Delay5us
+        LCALL   ??B_LUX_Delay5us?relay
+//   64   B_LUX_SCL0_L;                    //拉低时钟线
+        CLR     0x80.0
+//   65 }
+        POP     DPH
+        CFI DPH0 SameValue
+        CFI CFA_SP SP+-4
+        POP     DPL
+        CFI DPL0 SameValue
+        CFI CFA_SP SP+-3
+        LJMP    ?BRET
+        CFI EndBlock cfiBlock3
+        REQUIRE _A_P0
+//   66 
+//   67 /*---------------------------------------------------------------------
+//   68  功能描述: 停止信号
+//   69  参数说明: 无	
+//   70  函数返回: 无
+//   71  ---------------------------------------------------------------------*/
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//   72 void B_LUX_Stop()
+B_LUX_Stop:
+        CFI Block cfiBlock4 Using cfiCommon0
+        CFI Function B_LUX_Stop
+        CODE
+//   73 {
+        FUNCALL B_LUX_Stop, B_LUX_Delay5us
+        LOCFRAME ISTACK, 2, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 0, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 2, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 0, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL B_LUX_Stop, B_LUX_Delay5us
+        LOCFRAME ISTACK, 2, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 0, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 2, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 0, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL B_LUX_Stop, B_LUX_Delay5us
+        LOCFRAME ISTACK, 2, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 0, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 2, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 0, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        PUSH    DPL
+        CFI DPL0 Frame(CFA_SP, 4)
+        CFI CFA_SP SP+-4
+        PUSH    DPH
+        CFI DPH0 Frame(CFA_SP, 5)
+        CFI CFA_SP SP+-5
+        ; Saved register size: 2
+        ; Auto size: 0
+//   74   B_LUX_SDA0_L;                    //拉低数据线
+        CLR     0x80.6
+//   75   B_LUX_SCL0_H;                    //拉高时钟线
+        SETB    0x80.0
+//   76   B_LUX_Delay5us();                 //延时
+        ; Setup parameters for call to function B_LUX_Delay5us
+        LCALL   ??B_LUX_Delay5us?relay
+//   77   B_LUX_SDA0_H;                    //产生上升沿
+        SETB    0x80.6
+//   78   B_LUX_Delay5us();                 //延时
+        ; Setup parameters for call to function B_LUX_Delay5us
+        LCALL   ??B_LUX_Delay5us?relay
+//   79   B_LUX_SCL0_L;
+        CLR     0x80.0
+//   80   B_LUX_Delay5us();
+        ; Setup parameters for call to function B_LUX_Delay5us
+        LCALL   ??B_LUX_Delay5us?relay
+//   81 }
+        POP     DPH
+        CFI DPH0 SameValue
+        CFI CFA_SP SP+-4
+        POP     DPL
+        CFI DPL0 SameValue
+        CFI CFA_SP SP+-3
+        LJMP    ?BRET
+        CFI EndBlock cfiBlock4
+        REQUIRE _A_P0
+//   82 
+//   83 /*---------------------------------------------------------------------
+//   84  功能描述: 发送应答信号
+//   85  参数说明: ack - 应答信号(0:ACK 1:NAK)
+//   86  函数返回: 无
+//   87  ---------------------------------------------------------------------*/
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//   88 void B_LUX_SendACK(uint8 ack)
+B_LUX_SendACK:
+        CFI Block cfiBlock5 Using cfiCommon0
+        CFI Function B_LUX_SendACK
+        CODE
+//   89 {
+        FUNCALL B_LUX_SendACK, B_LUX_Delay5us
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL B_LUX_SendACK, B_LUX_Delay5us
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        MOV     A,#-0x9
+        LCALL   ?BANKED_ENTER_XDATA
+        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+        CFI CFA_SP SP+0
+        CFI CFA_XSP16 add(XSP16, 9)
+        ; Saved register size: 9
+        ; Auto size: 0
+        MOV     A,R1
+//   90   if (ack&0x01)	B_LUX_SDA0_H;		 //写应答信号
+        MOV     C,0xE0 /* A   */.0
+        JNC     ??B_LUX_SendACK_0
+        SETB    0x80.6
+        SJMP    ??B_LUX_SendACK_1
+//   91   else	B_LUX_SDA0_L;
+??B_LUX_SendACK_0:
+        CLR     0x80.6
+//   92   
+//   93   B_LUX_SCL0_H;                    //拉高时钟线
+??B_LUX_SendACK_1:
+        SETB    0x80.0
+//   94   B_LUX_Delay5us();                 //延时
+        ; Setup parameters for call to function B_LUX_Delay5us
+        LCALL   ??B_LUX_Delay5us?relay
+//   95   B_LUX_SCL0_L;                    //拉低时钟线
+        CLR     0x80.0
+//   96   B_LUX_SDA0_H;
+        SETB    0x80.6
+//   97   B_LUX_Delay5us();                 //延时
+        ; Setup parameters for call to function B_LUX_Delay5us
+        LCALL   ??B_LUX_Delay5us?relay
+//   98 }
+        MOV     R7,#0x1
+        LJMP    ?BANKED_LEAVE_XDATA
+        CFI EndBlock cfiBlock5
+        REQUIRE _A_P0
+//   99 
+//  100 /*---------------------------------------------------------------------
+//  101  功能描述: 接收应答信号
+//  102  参数说明: 无
+//  103  函数返回: 返回应答信号
+//  104  ---------------------------------------------------------------------*/
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  105 uint8 B_LUX_RecvACK()
+B_LUX_RecvACK:
+        CFI Block cfiBlock6 Using cfiCommon0
+        CFI Function B_LUX_RecvACK
+        CODE
+//  106 {
+        FUNCALL B_LUX_RecvACK, B_LUX_Delay5us
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL B_LUX_RecvACK, B_LUX_Delay5us
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        MOV     A,#-0x9
+        LCALL   ?BANKED_ENTER_XDATA
+        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+        CFI CFA_SP SP+0
+        CFI CFA_XSP16 add(XSP16, 9)
+        ; Saved register size: 9
+        ; Auto size: 0
+//  107   uint8 CY = 0x00;
+//  108   B_LUX_SDA0_H;
+        SETB    0x80.6
+//  109   
+//  110   B_LUX_SDA0_I;
+        ANL     0xfe,#0xbf
+//  111   
+//  112   B_LUX_SCL0_H;              //拉高时钟线
+        SETB    0x80.0
+//  113   B_LUX_Delay5us();                 //延时
+        ; Setup parameters for call to function B_LUX_Delay5us
+        LCALL   ??B_LUX_Delay5us?relay
+//  114   
+//  115   
+//  116   CY |= B_LUX_SDA0_DAT;    //读应答信号
+        MOV     C,0x80.6
+        CLR     A
+        RLC     A
+        MOV     R6,A
+//  117   
+//  118   B_LUX_Delay5us();                 //延时
+        ; Setup parameters for call to function B_LUX_Delay5us
+        LCALL   ??B_LUX_Delay5us?relay
+//  119   
+//  120   B_LUX_SCL0_L;              //拉低时钟线
+        CLR     0x80.0
+//  121   
+//  122   B_LUX_SDA0_O;
+        ORL     0xfd,#0x40
+//  123   
+//  124   return CY;
+        MOV     A,R6
+        MOV     R1,A
+        MOV     R7,#0x1
+        LJMP    ?BANKED_LEAVE_XDATA
+        CFI EndBlock cfiBlock6
+        REQUIRE _A_P0
+        REQUIRE P1DIR
+        REQUIRE P0DIR
+//  125 }
+//  126 
+//  127 /*---------------------------------------------------------------------
+//  128  功能描述: 向IIC总线发送一个字节数据
+//  129  参数说明: dat - 写字节
+//  130  函数返回: 无
+//  131  ---------------------------------------------------------------------*/
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  132 void B_LUX_SendByte(uint8 dat)
+B_LUX_SendByte:
+        CFI Block cfiBlock7 Using cfiCommon0
+        CFI Function B_LUX_SendByte
+        CODE
+//  133 {
+        FUNCALL B_LUX_SendByte, B_LUX_Delay5us
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL B_LUX_SendByte, B_LUX_Delay5us
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL B_LUX_SendByte, B_LUX_Delay5us
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL B_LUX_SendByte, B_LUX_RecvACK
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        MOV     A,#-0x9
+        LCALL   ?BANKED_ENTER_XDATA
+        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+        CFI CFA_SP SP+0
+        CFI CFA_XSP16 add(XSP16, 9)
+        ; Saved register size: 9
+        ; Auto size: 0
+        MOV     A,R1
+        MOV     R7,A
+//  134   uint8 i;
+//  135   
+//  136   for (i=0; i<8; i++)         			//8位计数器
+        MOV     R6,#0x0
+        SJMP    ??B_LUX_SendByte_0
+//  137   {
+//  138     if (dat&0x80)	B_LUX_SDA0_H;
+//  139     else	B_LUX_SDA0_L;              //送数据口
+??B_LUX_SendByte_1:
+        CLR     0x80.6
+//  140     
+//  141     B_LUX_Delay5us();             			//延时
+??B_LUX_SendByte_2:
+        ; Setup parameters for call to function B_LUX_Delay5us
+        LCALL   ??B_LUX_Delay5us?relay
+//  142     B_LUX_SCL0_H;                		//拉高时钟线
+        SETB    0x80.0
+//  143     B_LUX_Delay5us();             			//延时
+        ; Setup parameters for call to function B_LUX_Delay5us
+        LCALL   ??B_LUX_Delay5us?relay
+//  144     B_LUX_SCL0_L;                		//拉低时钟线
+        CLR     0x80.0
+//  145     B_LUX_Delay5us();             			//延时
+        ; Setup parameters for call to function B_LUX_Delay5us
+        LCALL   ??B_LUX_Delay5us?relay
+//  146     dat <<= 1;              			//移出数据的最高位
+        MOV     A,R7
+        CLR     C
+        RLC     A
+        MOV     R7,A
+        INC     R6
+??B_LUX_SendByte_0:
+        MOV     A,R6
+        CLR     C
+        SUBB    A,#0x8
+        JNC     ??B_LUX_SendByte_3
+        MOV     A,R7
+        MOV     C,0xE0 /* A   */.7
+        JNC     ??B_LUX_SendByte_1
+        SETB    0x80.6
+        SJMP    ??B_LUX_SendByte_2
+//  147   }
+//  148   
+//  149   B_LUX_RecvACK();
+??B_LUX_SendByte_3:
+        ; Setup parameters for call to function B_LUX_RecvACK
+        LCALL   ??B_LUX_RecvACK?relay
+//  150 }
+        MOV     R7,#0x1
+        LJMP    ?BANKED_LEAVE_XDATA
+        CFI EndBlock cfiBlock7
+        REQUIRE _A_P0
+//  151 
+//  152 /*---------------------------------------------------------------------
+//  153  功能描述: 从IIC总线接收一个字节数据
+//  154  参数说明: 无
+//  155  函数返回: 接收字节
+//  156  ---------------------------------------------------------------------*/
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  157 uint8 B_LUX_RecvByte()
+B_LUX_RecvByte:
+        CFI Block cfiBlock8 Using cfiCommon0
+        CFI Function B_LUX_RecvByte
+        CODE
+//  158 {
+        FUNCALL B_LUX_RecvByte, B_LUX_Delay5us
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL B_LUX_RecvByte, B_LUX_Delay5us
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        MOV     A,#-0x9
+        LCALL   ?BANKED_ENTER_XDATA
+        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+        CFI CFA_SP SP+0
+        CFI CFA_XSP16 add(XSP16, 9)
+        ; Saved register size: 9
+        ; Auto size: 0
+//  159   uint8 i;
+//  160   uint8 dat = 0;
+        MOV     ?V0 + 0,#0x0
+//  161   B_LUX_SDA0_I;
+        ANL     0xfe,#0xbf
+//  162   
+//  163   B_LUX_SDA0_H;                  //使能内部上拉,准备读取数据,
+        SETB    0x80.6
+//  164   for (i=0; i<8; i++)         	//8位计数器
+        MOV     R6,#0x0
+        SJMP    ??B_LUX_RecvByte_0
+//  165   {
+//  166     B_LUX_SCL0_H;              //拉高时钟线
+??B_LUX_RecvByte_1:
+        SETB    0x80.0
+//  167     B_LUX_Delay5us();             	//延时
+        ; Setup parameters for call to function B_LUX_Delay5us
+        LCALL   ??B_LUX_Delay5us?relay
+//  168     dat |= B_LUX_SDA0_DAT;     //读数据               
+        MOV     C,0x80.6
+        CLR     A
+        RLC     A
+        ORL     ?V0 + 0,A
+//  169     B_LUX_SCL0_L;              //拉低时钟线
+        CLR     0x80.0
+//  170     B_LUX_Delay5us();             	//延时
+        ; Setup parameters for call to function B_LUX_Delay5us
+        LCALL   ??B_LUX_Delay5us?relay
+//  171     
+//  172     dat <<= 1;	
+        MOV     A,?V0 + 0
+        CLR     C
+        RLC     A
+        MOV     ?V0 + 0,A
+//  173   }
+        INC     R6
+??B_LUX_RecvByte_0:
+        MOV     A,R6
+        CLR     C
+        SUBB    A,#0x8
+        JC      ??B_LUX_RecvByte_1
+//  174   B_LUX_SDA0_O;
+        ORL     0xfd,#0x40
+//  175   
+//  176   return dat;
+        MOV     R1,?V0 + 0
+        MOV     R7,#0x1
+        LJMP    ?BANKED_LEAVE_XDATA
+        CFI EndBlock cfiBlock8
+        REQUIRE P1DIR
+        REQUIRE _A_P0
+        REQUIRE P0DIR
+//  177 }
+//  178 
+//  179 /*---------------------------------------------------------------------
+//  180  功能描述: 写BH1750
+//  181  参数说明: REG_Address - 寄存器地址
+//  182  函数返回: 无
+//  183  ---------------------------------------------------------------------*/
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  184 void B_LUX_Single_Write(uint8 REG_Address)
+B_LUX_Single_Write:
+        CFI Block cfiBlock9 Using cfiCommon0
+        CFI Function B_LUX_Single_Write
+        CODE
+//  185 {
+        FUNCALL B_LUX_Single_Write, B_LUX_Start
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL B_LUX_Single_Write, B_LUX_SendByte
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL B_LUX_Single_Write, B_LUX_SendByte
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL B_LUX_Single_Write, B_LUX_Stop
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        MOV     A,#-0x9
+        LCALL   ?BANKED_ENTER_XDATA
+        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+        CFI CFA_SP SP+0
+        CFI CFA_XSP16 add(XSP16, 9)
+        ; Saved register size: 9
+        ; Auto size: 0
+        MOV     A,R1
+        MOV     R6,A
+//  186   B_LUX_Start();                  //起始信号
+        ; Setup parameters for call to function B_LUX_Start
+        LCALL   ??B_LUX_Start?relay
+//  187   B_LUX_SendByte(B_LUX_SlaveAddress);   //发送设备地址+写信号
+        ; Setup parameters for call to function B_LUX_SendByte
+        MOV     R1,#0x46
+        LCALL   ??B_LUX_SendByte?relay
+//  188   B_LUX_SendByte(REG_Address);    //内部寄存器地址
+        ; Setup parameters for call to function B_LUX_SendByte
+        MOV     A,R6
+        MOV     R1,A
+        LCALL   ??B_LUX_SendByte?relay
+//  189   B_LUX_Stop();                   //发送停止信号
+        ; Setup parameters for call to function B_LUX_Stop
+        LCALL   ??B_LUX_Stop?relay
+//  190 }
+        MOV     R7,#0x1
+        LJMP    ?BANKED_LEAVE_XDATA
+        CFI EndBlock cfiBlock9
+//  191 
+//  192 /*---------------------------------------------------------------------
+//  193  功能描述: 连续读出BH1750内部数据
+//  194  参数说明: 无
+//  195  函数返回: 无
+//  196  ---------------------------------------------------------------------*/
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  197 void B_LUX_Multiple_read(void)
+B_LUX_Multiple_read:
+        CFI Block cfiBlock10 Using cfiCommon0
+        CFI Function B_LUX_Multiple_read
+        CODE
+//  198 {   
+        FUNCALL B_LUX_Multiple_read, B_LUX_Start
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 10, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 10, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL B_LUX_Multiple_read, B_LUX_SendByte
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 10, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 10, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL B_LUX_Multiple_read, B_LUX_SendACK
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 10, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 10, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL B_LUX_Multiple_read, B_LUX_RecvByte
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 10, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 10, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL B_LUX_Multiple_read, B_LUX_SendACK
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 10, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 10, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL B_LUX_Multiple_read, B_LUX_Stop
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 10, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 10, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL B_LUX_Multiple_read, B_LUX_Delay5ms
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 10, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 10, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        MOV     A,#-0xa
+        LCALL   ?BANKED_ENTER_XDATA
+        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI V1 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-9)))
+        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+        CFI CFA_SP SP+0
+        CFI CFA_XSP16 add(XSP16, 10)
+        ; Saved register size: 10
+        ; Auto size: 0
+//  199   uint8 i;	
+//  200   B_LUX_Start();                          //起始信号
+        ; Setup parameters for call to function B_LUX_Start
+        LCALL   ??B_LUX_Start?relay
+//  201   B_LUX_SendByte(B_LUX_SlaveAddress+1);         //发送设备地址+读信号
+        ; Setup parameters for call to function B_LUX_SendByte
+        MOV     R1,#0x47
+        LCALL   ??B_LUX_SendByte?relay
+//  202   
+//  203   for (i=0; i<3; i++)                        //连续读取6个地址数据，存储中BUF
+        MOV     R6,#0x0
+        SJMP    ??B_LUX_Multiple_read_0
+//  204   {
+//  205     BUF_0[i] = B_LUX_RecvByte();          //BUF[0]存储0x32地址中的数据
+//  206     if (i == 3)
+//  207     {
+//  208       
+//  209       B_LUX_SendACK(1);                   //最后一个数据需要回NOACK
+//  210     }
+//  211     else
+//  212     {		
+//  213       B_LUX_SendACK(0);                   //回应ACK
+??B_LUX_Multiple_read_1:
+        ; Setup parameters for call to function B_LUX_SendACK
+        MOV     R1,#0x0
+??B_LUX_Multiple_read_2:
+        LCALL   ??B_LUX_SendACK?relay
+//  214     }
+        INC     R6
+??B_LUX_Multiple_read_0:
+        MOV     A,R6
+        CLR     C
+        SUBB    A,#0x3
+        JNC     ??B_LUX_Multiple_read_3
+        ; Setup parameters for call to function B_LUX_RecvByte
+        LCALL   ??B_LUX_RecvByte?relay
+        MOV     A,R1
+        PUSH    A
+        CFI CFA_SP SP+-1
+        MOV     ?V0 + 0,R6
+        MOV     A,#BUF_0 & 0xff
+        ADD     A,?V0 + 0
+        MOV     DPL,A
+        MOV     A,#(BUF_0 >> 8) & 0xff
+        ADDC    A,#0x0
+        MOV     DPH,A
+        POP     A
+        CFI CFA_SP SP+0
+        MOVX    @DPTR,A
+        MOV     A,#0x3
+        XRL     A,R6
+        JNZ     ??B_LUX_Multiple_read_1
+        ; Setup parameters for call to function B_LUX_SendACK
+        MOV     R1,#0x1
+        SJMP    ??B_LUX_Multiple_read_2
+//  215   }
+//  216   
+//  217   B_LUX_Stop();                           //停止信号
+??B_LUX_Multiple_read_3:
+        ; Setup parameters for call to function B_LUX_Stop
+        LCALL   ??B_LUX_Stop?relay
+//  218   B_LUX_Delay5ms();
+        ; Setup parameters for call to function B_LUX_Delay5ms
+        LCALL   ??B_LUX_Delay5ms?relay
+//  219 }
+        MOV     R7,#0x2
+        LJMP    ?BANKED_LEAVE_XDATA
+        CFI EndBlock cfiBlock10
+//  220 
+//  221 /*---------------------------------------------------------------------
+//  222  功能描述: 初始化光照传感器
+//  223  参数说明: 无
+//  224  函数返回: 无
+//  225  ---------------------------------------------------------------------*/
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  226 void B_LUX_Init()
+B_LUX_Init:
+        CFI Block cfiBlock11 Using cfiCommon0
+        CFI Function B_LUX_Init
+        CODE
+//  227 {
+        FUNCALL B_LUX_Init, B_LUX_delay_nms
+        LOCFRAME ISTACK, 2, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 0, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 2, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 0, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL B_LUX_Init, B_LUX_Single_Write
+        LOCFRAME ISTACK, 2, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 0, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 2, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 0, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        PUSH    DPL
+        CFI DPL0 Frame(CFA_SP, 4)
+        CFI CFA_SP SP+-4
+        PUSH    DPH
+        CFI DPH0 Frame(CFA_SP, 5)
+        CFI CFA_SP SP+-5
+        ; Saved register size: 2
+        ; Auto size: 0
+//  228   
+//  229   P1SEL &= ~(0x48);
+        ANL     0xf4,#0xb7
+//  230   
+//  231   B_LUX_SCL0_O;
+        ORL     0xfd,#0x1
+//  232   B_LUX_SDA0_O;
+        ORL     0xfd,#0x40
+//  233   
+//  234   B_LUX_delay_nms(100);	    //延时100ms
+        ; Setup parameters for call to function B_LUX_delay_nms
+        MOV     R2,#0x64
+        MOV     R3,#0x0
+        LCALL   ??B_LUX_delay_nms?relay
+//  235   
+//  236   B_LUX_Single_Write(0x01); 
+        ; Setup parameters for call to function B_LUX_Single_Write
+        MOV     R1,#0x1
+        LCALL   ??B_LUX_Single_Write?relay
+//  237   
+//  238 }
+        POP     DPH
+        CFI DPH0 SameValue
+        CFI CFA_SP SP+-4
+        POP     DPL
+        CFI DPL0 SameValue
+        CFI CFA_SP SP+-3
+        LJMP    ?BRET
+        CFI EndBlock cfiBlock11
+        REQUIRE P1SEL
+        REQUIRE P0DIR
+//  239 
+//  240 /*---------------------------------------------------------------------
+//  241  功能描述: 光照读取函数
+//  242  参数说明: 无
+//  243  函数返回: 返回光照值
+//  244  ---------------------------------------------------------------------*/
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  245 uint32 B_LUX_GetLux()
+B_LUX_GetLux:
+        CFI Block cfiBlock12 Using cfiCommon0
+        CFI Function B_LUX_GetLux
+        CODE
+//  246 {  
+        FUNCALL B_LUX_GetLux, B_LUX_Single_Write
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 16, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 16, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL B_LUX_GetLux, B_LUX_Single_Write
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 16, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 16, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL B_LUX_GetLux, B_LUX_delay_nms
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 16, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 16, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL B_LUX_GetLux, B_LUX_Multiple_read
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 16, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 16, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL B_LUX_GetLux, B_LUX_Single_Write
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 16, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 16, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        MOV     A,#-0x10
+        LCALL   ?BANKED_ENTER_XDATA
+        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI V7 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI V6 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI V5 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+        CFI V4 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+        CFI V3 load(1, XDATA, add(CFA_XSP16, literal(-11)))
+        CFI V2 load(1, XDATA, add(CFA_XSP16, literal(-12)))
+        CFI V1 load(1, XDATA, add(CFA_XSP16, literal(-13)))
+        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-14)))
+        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-15)))
+        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-16)))
+        CFI CFA_SP SP+0
+        CFI CFA_XSP16 add(XSP16, 16)
+        ; Saved register size: 16
+        ; Auto size: 0
+//  247   fint32 temp;
+//  248   B_LUX_Single_Write(0x01);   // power on
+        ; Setup parameters for call to function B_LUX_Single_Write
+        MOV     R1,#0x1
+        LCALL   ??B_LUX_Single_Write?relay
+//  249   B_LUX_Single_Write(0x10);   // H- resolution mode 
+        ; Setup parameters for call to function B_LUX_Single_Write
+        MOV     R1,#0x10
+        LCALL   ??B_LUX_Single_Write?relay
+//  250   
+//  251   B_LUX_delay_nms(180);       //延时180ms
+        ; Setup parameters for call to function B_LUX_delay_nms
+        MOV     R2,#-0x4c
+        MOV     R3,#0x0
+        LCALL   ??B_LUX_delay_nms?relay
+//  252   
+//  253   B_LUX_Multiple_read();      //连续读出数据，存储在BUF中
+        ; Setup parameters for call to function B_LUX_Multiple_read
+        LCALL   ??B_LUX_Multiple_read?relay
+//  254   
+//  255   B_LUX_Single_Write(0x00);   // power off
+        ; Setup parameters for call to function B_LUX_Single_Write
+        MOV     R1,#0x0
+        LCALL   ??B_LUX_Single_Write?relay
+//  256   
+//  257   dis_data_0=BUF_0[0];
+//  258   dis_data_0=(dis_data_0<<8)+BUF_0[1];//合成数据，即光照数据
+        MOV     DPTR,#BUF_0
+        MOVX    A,@DPTR
+        MOV     R1,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     DPTR,#dis_data_0
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,R1
+        MOVX    @DPTR,A
+//  259   
+//  260   temp=(float)dis_data_0/1.2;
+//  261   return (uint32)(temp*1.4);
+        MOV     DPTR,#dis_data_0
+        MOVX    A,@DPTR
+        MOV     ?V0 + 0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     ?V0 + 1,A
+        CLR     A
+        MOV     ?V0 + 2,A
+        MOV     ?V0 + 3,A
+        MOV     R0,#?V0 + 0
+        LCALL   ?UL_TO_FLT
+        MOV     DPTR,#__Constant_3f99999a
+        MOV     R0,#?V0 + 4
+        LCALL   ?L_MOV_X
+        MOV     R0,#?V0 + 0
+        MOV     R1,#?V0 + 4
+        LCALL   ?FLT_DIV
+        MOV     DPTR,#__Constant_3fb33333
+        MOV     R0,#?V0 + 4
+        LCALL   ?L_MOV_X
+        MOV     R0,#?V0 + 0
+        MOV     R1,#?V0 + 4
+        LCALL   ?FLT_MUL
+        MOV     R0,#?V0 + 0
+        LCALL   ?FLT_TO_UL
+        MOV     R2,?V0 + 0
+        MOV     R3,?V0 + 1
+        MOV     R4,?V0 + 2
+        MOV     R5,?V0 + 3
+        MOV     R7,#0x8
+        LJMP    ?BANKED_LEAVE_XDATA
+        CFI EndBlock cfiBlock12
+//  262 } 
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA32
+__Constant_3f99999a:
+        DD 3F99999AH
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA32
+__Constant_3fb33333:
+        DD 3FB33333H
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??B_LUX_delay_nms?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    B_LUX_delay_nms
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??B_LUX_Delay5us?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    B_LUX_Delay5us
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??B_LUX_Delay5ms?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    B_LUX_Delay5ms
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??B_LUX_Start?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    B_LUX_Start
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??B_LUX_Stop?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    B_LUX_Stop
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??B_LUX_SendACK?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    B_LUX_SendACK
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??B_LUX_RecvACK?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    B_LUX_RecvACK
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??B_LUX_SendByte?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    B_LUX_SendByte
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??B_LUX_RecvByte?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    B_LUX_RecvByte
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??B_LUX_Single_Write?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    B_LUX_Single_Write
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??B_LUX_Multiple_read?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    B_LUX_Multiple_read
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??B_LUX_Init?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    B_LUX_Init
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??B_LUX_GetLux?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    B_LUX_GetLux
+
+        END
+//  263 
+// 
+// 559 bytes in segment BANKED_CODE
+//  78 bytes in segment BANK_RELAYS
+//   4 bytes in segment SFR_AN
+//   8 bytes in segment XDATA_ROM_C
+//  10 bytes in segment XDATA_Z
+// 
+// 637 bytes of CODE  memory
+//   0 bytes of CONST memory (+ 8 bytes shared)
+//   0 bytes of DATA  memory (+ 4 bytes shared)
+//  10 bytes of XDATA memory
+//
+//Errors: none
+//Warnings: none
